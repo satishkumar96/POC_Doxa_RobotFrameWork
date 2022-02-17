@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220217 21:27:18.159" rpa="false" schemaversion="2">
+<suite id="s1" name="PPR to PO" source="C:\Users\SATISH\PycharmProjects\POC_Doxa_RobotFrameWork\Automate_Scenario\PPR_to_PO.robot">
+<test id="s1-t1" name="Login for Marilyn">
+<kw name="Open Browser and Maximize window">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220217 21:27:18.522" level="INFO">Opening browser 'chrome' to base url 'https://auth-stag.doxa-holdings.com/login'.</msg>
+<status status="PASS" starttime="20220217 21:27:18.522" endtime="20220217 21:27:25.164"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220217 21:27:25.164" endtime="20220217 21:27:25.306"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220217 21:27:25.306" endtime="20220217 21:27:25.306"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220217 21:27:25.306" endtime="20220217 21:27:25.306"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:18.522" endtime="20220217 21:27:25.306"/>
+</kw>
+<kw name="marilyn login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_field}</arg>
+<arg>${marilyn_username}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:25.306" level="INFO">Typing text 'marilyn.f@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220217 21:27:25.306" endtime="20220217 21:27:25.487"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<arg>True</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:25.488" level="INFO">Typing password into text field 'xpath://input[@id='password']'.</msg>
+<msg timestamp="20220217 21:27:25.554" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220217 21:27:25.614" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220217 21:27:25.487" endtime="20220217 21:27:25.615"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:25.615" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220217 21:27:25.615" endtime="20220217 21:27:32.370"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:25.306" endtime="20220217 21:27:32.370"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220217 21:27:32.371" endtime="20220217 21:27:33.849"/>
+</kw>
+<kw name="do logout">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:33.852" level="INFO">Clicking element 'xpath://i[@class='fa fa-power-off']'.</msg>
+<status status="PASS" starttime="20220217 21:27:33.852" endtime="20220217 21:27:35.116"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:33.850" endtime="20220217 21:27:35.116"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:18.522" endtime="20220217 21:27:35.117"/>
+</test>
+<test id="s1-t2" name="Login for Chris">
+<kw name="chris login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_field}</arg>
+<arg>${chris_username}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:35.123" level="INFO">Typing text 'chris.p2papp@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220217 21:27:35.122" endtime="20220217 21:27:35.272"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<arg>True</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:35.272" level="INFO">Typing password into text field 'xpath://input[@id='password']'.</msg>
+<msg timestamp="20220217 21:27:35.328" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220217 21:27:35.395" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220217 21:27:35.272" endtime="20220217 21:27:35.395"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:35.395" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220217 21:27:35.395" endtime="20220217 21:27:37.033"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:35.121" endtime="20220217 21:27:37.034"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220217 21:27:37.035" endtime="20220217 21:27:37.698"/>
+</kw>
+<kw name="do logout">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 21:27:37.700" level="INFO">Clicking element 'xpath://i[@class='fa fa-power-off']'.</msg>
+<status status="PASS" starttime="20220217 21:27:37.700" endtime="20220217 21:27:38.329"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:37.698" endtime="20220217 21:27:38.330"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220217 21:27:38.331" endtime="20220217 21:27:40.620"/>
+</kw>
+<status status="PASS" starttime="20220217 21:27:35.120" endtime="20220217 21:27:40.620"/>
+</test>
+<status status="PASS" starttime="20220217 21:27:18.159" endtime="20220217 21:27:40.620"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="PPR to PO">PPR to PO</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
