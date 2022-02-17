@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220217 16:21:00.835" rpa="false" schemaversion="2">
+<suite id="s1" name="LoginPage" source="C:\Users\SATISH\PycharmProjects\POC_Doxa_RobotFrameWork\Automate_Scenario\LoginPage.robot">
+<test id="s1-t1" name="Validate Login Page title">
+<kw name="Open Browser And Maximize">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220217 16:21:01.167" level="INFO">Opening browser 'gc' to base url 'https://auth-dev.doxa-holdings.com/login'.</msg>
+<status status="PASS" starttime="20220217 16:21:01.167" endtime="20220217 16:21:05.263"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220217 16:21:05.263" endtime="20220217 16:21:05.396"/>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220217 16:21:05.396" endtime="20220217 16:21:05.396"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>50 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220217 16:21:05.396" endtime="20220217 16:21:05.407"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>50 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220217 16:21:05.407" endtime="20220217 16:21:05.407"/>
+</kw>
+<status status="PASS" starttime="20220217 16:21:01.167" endtime="20220217 16:21:05.410"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Doxa Connex 2.0</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220217 16:21:05.421" level="INFO">Page title is 'Doxa Connex 2.0'.</msg>
+<status status="PASS" starttime="20220217 16:21:05.411" endtime="20220217 16:21:05.421"/>
+</kw>
+<status status="PASS" starttime="20220217 16:21:01.167" endtime="20220217 16:21:05.422"/>
+</test>
+<test id="s1-t2" name="Validate Email Field">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${email}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220217 16:21:05.472" level="INFO">Element 'xpath://input[@id='email']' is displayed.</msg>
+<status status="PASS" starttime="20220217 16:21:05.425" endtime="20220217 16:21:05.472"/>
+</kw>
+<status status="PASS" starttime="20220217 16:21:05.424" endtime="20220217 16:21:05.473"/>
+</test>
+<test id="s1-t3" name="Validate Password Field">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${password}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220217 16:21:05.496" level="INFO">Element 'xpath://input[@id='password']' is displayed.</msg>
+<status status="PASS" starttime="20220217 16:21:05.473" endtime="20220217 16:21:05.496"/>
+</kw>
+<status status="PASS" starttime="20220217 16:21:05.473" endtime="20220217 16:21:05.496"/>
+</test>
+<test id="s1-t4" name="do valid Login">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${email}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220217 16:21:05.508" endtime="20220217 16:21:05.539"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email}</arg>
+<arg>doxaadmin2@getnada.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220217 16:21:05.539" level="INFO">Typing text 'doxaadmin2@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220217 16:21:05.539" endtime="20220217 16:21:05.679"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220217 16:21:05.679" endtime="20220217 16:21:05.737"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>P@ss1829</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220217 16:21:05.739" level="INFO">Typing password into text field 'xpath://input[@id='password']'.</msg>
+<msg timestamp="20220217 16:21:05.778" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220217 16:21:05.843" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220217 16:21:05.738" endtime="20220217 16:21:05.843"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:21:05.844" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220217 16:21:05.844" endtime="20220217 16:22:12.568"/>
+</kw>
+<status status="PASS" starttime="20220217 16:21:05.508" endtime="20220217 16:22:12.569"/>
+</test>
+<test id="s1-t5" name="click on Onboard New Entity">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://span[normalize-space()='Onboard Entity']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:22:12.573" level="INFO">Clicking element 'xpath://span[normalize-space()='Onboard Entity']'.</msg>
+<status status="PASS" starttime="20220217 16:22:12.572" endtime="20220217 16:22:14.940"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:12.571" endtime="20220217 16:22:14.941"/>
+</test>
+<test id="s1-t6" name="validate Onboard New Entity">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Onboard New Entity</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220217 16:22:14.945" endtime="20220217 16:22:15.329"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:14.943" endtime="20220217 16:22:15.330"/>
+</test>
+<test id="s1-t7" name="validate Entity Roles">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://label[@for='buyer']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:22:15.332" level="INFO">Clicking element 'xpath://label[@for='buyer']'.</msg>
+<status status="PASS" starttime="20220217 16:22:15.332" endtime="20220217 16:22:15.491"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://label[@for='supplier']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:22:15.493" level="INFO">Clicking element 'xpath://label[@for='supplier']'.</msg>
+<status status="PASS" starttime="20220217 16:22:15.493" endtime="20220217 16:22:15.644"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:15.331" endtime="20220217 16:22:15.645"/>
+</test>
+<test id="s1-t8" name="click List Of Entities">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://span[normalize-space()='List of Entities']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:22:15.648" level="INFO">Clicking element 'xpath://span[normalize-space()='List of Entities']'.</msg>
+<status status="PASS" starttime="20220217 16:22:15.648" endtime="20220217 16:22:15.717"/>
+</kw>
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20220217 16:22:15.718" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20220217 16:22:15.718" endtime="20220217 16:22:15.727"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:15.647" endtime="20220217 16:22:15.728"/>
+</test>
+<test id="s1-t9" name="validate List Of Entities">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${first_list_of_entities}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220217 16:22:15.732" endtime="20220217 16:22:16.920"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${first_list_of_entities}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:22:16.922" level="INFO">Double clicking element 'xpath://*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div[2]/div[3]/div[2]/div/div/div[1]'.</msg>
+<status status="PASS" starttime="20220217 16:22:16.921" endtime="20220217 16:22:17.844"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Entity Details</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220217 16:22:17.845" endtime="20220217 16:22:19.488"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:15.730" endtime="20220217 16:22:19.490"/>
+</test>
+<test id="s1-t10" name="do Logout">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220217 16:22:19.493" endtime="20220217 16:22:19.678"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://i[@class='fa fa-power-off']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220217 16:22:19.679" level="INFO">Clicking element 'xpath://i[@class='fa fa-power-off']'.</msg>
+<status status="PASS" starttime="20220217 16:22:19.679" endtime="20220217 16:22:20.990"/>
+</kw>
+<kw name="Close Browser">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220217 16:22:20.992" endtime="20220217 16:22:23.256"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220217 16:22:23.256" endtime="20220217 16:22:23.256"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:20.991" endtime="20220217 16:22:23.256"/>
+</kw>
+<status status="PASS" starttime="20220217 16:22:19.492" endtime="20220217 16:22:23.256"/>
+</test>
+<status status="PASS" starttime="20220217 16:21:00.835" endtime="20220217 16:22:23.256"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="0" id="s1" name="LoginPage">LoginPage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
