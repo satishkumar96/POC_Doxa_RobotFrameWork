@@ -30,38 +30,64 @@ Login for Marilyn
     Click Element   ${Pre_Purchase_Requisition_tab}
     Click Element   ${Raise_Pre_Requisition_tab}
 
+#    Type of Requisition
     Select From List By Label   name:requisitionType    Pre Purchase Requisition
 
+#    Nature of Requisition
     Click Element   name:project
     Select From List By Label   name:project    Non-Project
 
+#    Currency
     Click Element   xpath://select[@name='currencyCode']
     Select From List By Label   xpath://select[@name='currencyCode']        Singapore Dollar (+SGD)
 
+#    PPR Title
     Input Text  pprTitle    TEST_20220218   True
 
+#    Procurement Type
     Click Element   xpath://select[@name='procurementType']
     Select From List By Label   xpath://select[@name='procurementType']     Goods
 
+#    Approval Route
     Click Element   xpath://select[@name='approvalRoute']
     Select From List By Label   name:approvalRoute      PPR approver
 
+#    Delivery Date
     Input Text  deliveryDate    21022022
 
+#    Delivery Address
     Click Element   name:deliveryAddress
     Select From List By Label   name:deliveryAddress    Jalan Besar
 
+#    Note
     Input Text  note    This is for Testing Purpose Only
+
+#    Add Catalogue
     Click Button    xpath://span[normalize-space()='Add Catalogue']/..
     Wait Until Page Contains    Catalogue Items
     Click Element   xpath:(//div[@ref="centerContainer"])[5]/div/div/div/div[1]/div/div/div/div[2]/input
     Click Button    xpath://button[text()='Add']
+
+#    Internal Conversations comment
     Input Text  xpath://div[@class='mb-2 row']//input[@placeholder='Please enter your comment here...']     Testing
     Click Button    xpath:(//button[text()='Send'])[1]
+
+#    Internal Conversations Attachement
     Click Element   xpath:(//span[text()='Attachment'])[1]
-    Click Button    xpath://span[text()='Add New']/..
+    Click Button    xpath:(//span[text()='Add New'])[1]/..
     Choose File     xpath:(//div[@ref="centerContainer"])[2]/div/div/div/div[3]/div/input   C:/Users/SATISH/OneDrive/Desktop/IMG_20211129_205823.jpg
-    Close Browser
+
+#   External Conversation comment
+    Input Text  xpath://div[@class='mb-4 row']//input[@placeholder='Please enter your comment here...']     Testing
+    Click Button    xpath://div[@class='mb-4 row']//button[@type='button'][normalize-space()='Send']
+
+#    External Conversations Attachement
+    Click Element   xpath:(//span[text()='Attachment'])[3]
+    Click Button    xpath:(//span[text()='Add New'])[2]/..
+    Choose File     xpath:(//div[@ref="centerContainer"])[3]/div/div/div/div[3]/div/input   C:/Users/SATISH/OneDrive/Desktop/IMG_20211129_205823.jpg
+
+#   Submit Button
+#    Click Button    xpath://span[text()='Submit']/..
 
 #Login for Chris
 #    chris login
@@ -74,7 +100,6 @@ Open Browser and Maximize window
     Maximize Browser Window
     Set Browser Implicit Wait   30
     Set Selenium Implicit Wait  30
-    Set Selenium Speed  0.5seconds
 
 marilyn login
     Input Text  ${username_field}   ${marilyn_username}     True
