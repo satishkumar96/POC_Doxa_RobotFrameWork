@@ -25,13 +25,25 @@ lOGIN FOR MARILYN
     open browser and maximize window
     marilyn login
     Wait Until Page Contains    Dashboard
-
     Click Element   ${Requisitions_tab}
-    Click Element   ${Pre_Purchase_Requisition_tab}
-    Click Element   xpath://span[text()='Purchase Pre-Requisitions List']
+    Click Element   xpath:(//span[text()='Requisitions'])[1]
+    Click Element   xpath://span[text()='PRs List']
     Double Click Element    xpath:(//div[@ref="eViewport"])[1]/div/div[1]
+
+    Wait Until Element Is Visible   xpath://button[text()='Submit']
+    Wait Until Element Is Enabled   xpath://button[text()='Submit']
+
+    Click Element   name:approvalRouteUuid      action_chain=True
+    Select From List By Label   name:approvalRouteUuid      PR approval
+
+    Click Button    xpath://button[text()='Clear All']
+    Click Element   xpath://div[text()='Please select a supplier']
+    Wait Until Element Is Visible   xpath://ul[@role="listbox"]
+    Click Element   xpath://li[text()='SS0001']     action_chain=True
+    Press Keys      None   '\ue00c'
+
     Execute Javascript      window.scrollTo(0, document.body.scrollHeight)
-    Element Should Be Visible   xpath://button[text()='Convert To Request']        Convert to Request button visible
+#    Close All Browsers
 
 *** Keywords ***
 Open Browser and Maximize window
@@ -39,7 +51,6 @@ Open Browser and Maximize window
     Maximize Browser Window
     Set Browser Implicit Wait   30
     Set Selenium Implicit Wait  30
-    Set Selenium Speed	0.5 seconds
 
 marilyn login
     Input Text  ${username_field}   ${marilyn_username}     True
