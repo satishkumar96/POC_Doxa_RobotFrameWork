@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  SeleniumLibrary
 
 *** Variables ***
 #Username and password to be entered
@@ -68,6 +69,11 @@ Login for Marilyn
     Click Element   xpath:(//div[@ref="centerContainer"])[5]/div/div/div/div[1]/div/div/div/div[2]/input
     Click Button    xpath://button[text()='Add']
 
+#    Click Element   xpath:(//div[@ref="eContainer"])[2]/div/div[5]
+#    Input Text  xpath:(//div[@ref="eContainer"])[2]/div/div[5]     50
+#    Click Element   xpath:(//div[@col-id="note"])[2]
+#    Input Text  xpath:(//div[@col-id="note"])[2]    Just For testing
+
 #    Internal Conversations comment
     Input Text  xpath://div[@class='mb-2 row']//input[@placeholder='Please enter your comment here...']     Testing
     Click Button    xpath:(//button[text()='Send'])[1]
@@ -75,7 +81,7 @@ Login for Marilyn
 #    Internal Conversations Attachement
     Click Element   xpath:(//span[text()='Attachment'])[1]
     Click Button    xpath:(//span[text()='Add New'])[1]/..
-    Choose File     xpath:(//div[@ref="centerContainer"])[2]/div/div/div/div[3]/div/input   C:/Users/SATISH/OneDrive/Desktop/IMG_20211129_205823.jpg
+    Choose File     xpath:(//div[@ref="centerContainer"])[2]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
 
 #   External Conversation comment
     Input Text  xpath://div[@class='mb-4 row']//input[@placeholder='Please enter your comment here...']     Testing
@@ -84,7 +90,9 @@ Login for Marilyn
 #    External Conversations Attachement
     Click Element   xpath:(//span[text()='Attachment'])[3]
     Click Button    xpath:(//span[text()='Add New'])[2]/..
-    Choose File     xpath:(//div[@ref="centerContainer"])[3]/div/div/div/div[3]/div/input   C:/Users/SATISH/OneDrive/Desktop/IMG_20211129_205823.jpg
+    Choose File     xpath:(//div[@ref="centerContainer"])[3]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
+
+
 
 #   Submit Button
 #    Click Button    xpath://span[text()='Submit']/..
@@ -100,6 +108,7 @@ Open Browser and Maximize window
     Maximize Browser Window
     Set Browser Implicit Wait   30
     Set Selenium Implicit Wait  30
+    Set Selenium Speed	0.5 seconds
 
 marilyn login
     Input Text  ${username_field}   ${marilyn_username}     True
