@@ -9,7 +9,7 @@ ${password}     P@ss2022
 
 #url and browser value
 ${url}      https://auth-stag.doxa-holdings.com/login
-${browser}   chrome
+${browser}   gc
 
 #locators
 ${username_field}   xpath://input[@id='email']
@@ -24,34 +24,35 @@ ${Raise_Pre_Requisition_tab}        xpath:(//span[text()='Raise Pre-Requisition'
 lOGIN FOR MARILYN
     open browser and maximize window
     marilyn login
-    Wait Until Page Contains    Dashboard
-    Click Element   ${Requisitions_tab}
-    Click Element   xpath:(//span[text()='Requisitions'])[1]
-    Click Element   xpath://span[text()='PRs List']
-    Double Click Element    xpath:(//div[@ref="eViewport"])[1]/div/div[1]
+    Press Keys      None    F5
+    Wait Until Page Contains    Dashboard   20seconds
+#    Click Element   ${Requisitions_tab}
+#    Click Element   xpath:(//span[text()='Requisitions'])[1]
+#    Click Element   xpath://span[text()='PRs List']
+#    Double Click Element    xpath:(//div[@ref="eViewport"])[1]/div/div[1]
+#
+#    Wait Until Element Is Visible   xpath://button[text()='Submit']     10seconds
+#    Wait Until Element Is Enabled   xpath://button[text()='Submit']     10seconds
+#
+#    Click Element   name:approvalRouteUuid      action_chain=True
+#    Select From List By Label   name:approvalRouteUuid      PR approval
+#
+#    Click Button    xpath://button[text()='Clear All']
+#    Click Element   xpath://div[text()='Please select a supplier']
+#    Wait Until Element Is Visible   xpath://ul[@role="listbox"]
+#    Click Element   xpath://li[text()='SS0001']     action_chain=True
+#    Press Keys      None   ESCAPE
 
-    Wait Until Element Is Visible   xpath://button[text()='Submit']     10seconds
-    Wait Until Element Is Enabled   xpath://button[text()='Submit']     10seconds
-
-    Click Element   name:approvalRouteUuid      action_chain=True
-    Select From List By Label   name:approvalRouteUuid      PR approval
-
-    Click Button    xpath://button[text()='Clear All']
-    Click Element   xpath://div[text()='Please select a supplier']
-    Wait Until Element Is Visible   xpath://ul[@role="listbox"]
-    Click Element   xpath://li[text()='SS0001']     action_chain=True
-    Press Keys      None   ESCAPE
-
-    Scroll Element Into View    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[1]
+#    Scroll Element Into View    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[1]
 #    Execute Javascript      window.scrollTo(0, 800)
-#    Close All Browsers
+    Close All Browsers
 
 *** Keywords ***
 Open Browser and Maximize window
     Open Browser    ${url}  ${browser}
     Maximize Browser Window
-    Set Browser Implicit Wait   30
-    Set Selenium Implicit Wait  30
+#    Set Browser Implicit Wait   10
+#    Set Selenium Implicit Wait  10
 
 marilyn login
     Input Text  ${username_field}   ${marilyn_username}     True
