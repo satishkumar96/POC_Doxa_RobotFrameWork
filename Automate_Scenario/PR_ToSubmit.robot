@@ -30,8 +30,8 @@ lOGIN FOR MARILYN
     Click Element   xpath://span[text()='PRs List']
     Double Click Element    xpath:(//div[@ref="eViewport"])[1]/div/div[1]
 
-    Wait Until Element Is Visible   xpath://button[text()='Submit']
-    Wait Until Element Is Enabled   xpath://button[text()='Submit']
+    Wait Until Element Is Visible   xpath://button[text()='Submit']     10seconds
+    Wait Until Element Is Enabled   xpath://button[text()='Submit']     10seconds
 
     Click Element   name:approvalRouteUuid      action_chain=True
     Select From List By Label   name:approvalRouteUuid      PR approval
@@ -40,9 +40,10 @@ lOGIN FOR MARILYN
     Click Element   xpath://div[text()='Please select a supplier']
     Wait Until Element Is Visible   xpath://ul[@role="listbox"]
     Click Element   xpath://li[text()='SS0001']     action_chain=True
-    Press Keys      None   '\ue00c'
+    Press Keys      None   ESCAPE
 
-    Execute Javascript      window.scrollTo(0, document.body.scrollHeight)
+    Scroll Element Into View    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[1]
+#    Execute Javascript      window.scrollTo(0, 800)
 #    Close All Browsers
 
 *** Keywords ***
