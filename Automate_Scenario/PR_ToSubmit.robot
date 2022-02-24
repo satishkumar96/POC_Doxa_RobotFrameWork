@@ -1,5 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  SikuliLibrary
+Library     OperatingSystem
 
 *** Variables ***
 #Username and password to be entered
@@ -24,37 +26,48 @@ ${Raise_Pre_Requisition_tab}        xpath:(//span[text()='Raise Pre-Requisition'
 lOGIN FOR MARILYN
     open browser and maximize window
     marilyn login
-    Press Keys      None    F5
-    Wait Until Page Contains    Dashboard
-    Click Element   ${Requisitions_tab}
-    Click Element   xpath:(//span[text()='Requisitions'])[1]
-    Click Element   xpath://span[text()='PRs List']
-    Double Click Element    xpath:(//div[@ref="eViewport"])[1]/div/div[1]
+    SeleniumLibrary.Press Keys      None    F5
+    SeleniumLibrary.Wait Until Page Contains    Dashboard
+    SeleniumLibrary.Click Element   ${Requisitions_tab}
+    SeleniumLibrary.Click Element   xpath:(//span[text()='Requisitions'])[1]
+    SeleniumLibrary.Click Element   xpath://span[text()='PRs List']
+    SeleniumLibrary.Double Click Element    xpath:(//div[@ref="eViewport"])[1]/div/div[1]
 
-    Wait Until Element Is Visible   xpath://button[text()='Submit']     10seconds
-    Wait Until Element Is Enabled   xpath://button[text()='Submit']     10seconds
+    SeleniumLibrary.Wait Until Element Is Visible   xpath://button[text()='Submit']     10seconds
+    SeleniumLibrary.Wait Until Element Is Enabled   xpath://button[text()='Submit']     10seconds
 
-    Click Element   name:approvalRouteUuid      action_chain=True
-    Select From List By Label   name:approvalRouteUuid      PR approval
+    SeleniumLibrary.Click Element   name:approvalRouteUuid      action_chain=True
+    SeleniumLibrary.Select From List By Label   name:approvalRouteUuid      PR approval
 
-    Click Button    xpath://button[text()='Clear All']
-    Click Element   xpath://div[text()='Please select a supplier']
-    Wait Until Element Is Visible   xpath://ul[@role="listbox"]
-    Click Element   xpath://li[text()='SS0001']     action_chain=True
-    Press Keys      None   ESCAPE
+    SeleniumLibrary.Click Button    xpath://button[text()='Clear All']
+    SeleniumLibrary.Click Element   xpath://div[text()='Please select a supplier']
+    SeleniumLibrary.Wait Until Element Is Visible   xpath://ul[@role="listbox"]
+    SeleniumLibrary.Click Element   xpath://li[text()='SS0001']     action_chain=True
+    SeleniumLibrary.Press Keys      None   ESCAPE
 
-    Scroll Element Into View    xpath://h3[text()='Conversations']
+    SeleniumLibrary.Scroll Element Into View    xpath://h3[text()='Conversations']
+    SeleniumLibrary.Double Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]
+    SeleniumLibrary.Press Keys      None    ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT
+    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="taxCode"]   action_chain=True
+    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="taxCode"]   action_chain=True
+
+    ${taxCode_coor} =  Create List  ${838}  ${446}  ${131}  ${25}
+    Log To Console  ${taxCode_coor}
+
+    SikuliLibrary.Click On Region   ${taxCode_coor}
+
 #    Close All Browsers
 
 *** Keywords ***
+
 Open Browser and Maximize window
-    Open Browser    ${url}  ${browser}
-    Maximize Browser Window
-    Delete All Cookies
-    Set Browser Implicit Wait   10
-    Set Selenium Implicit Wait  10
+    SeleniumLibrary.Open Browser    ${url}  ${browser}
+    SeleniumLibrary.Maximize Browser Window
+    SeleniumLibrary.Delete All Cookies
+    SeleniumLibrary.Set Browser Implicit Wait   10
+    SeleniumLibrary.Set Selenium Implicit Wait  10
 
 marilyn login
-    Input Text  ${username_field}   ${marilyn_username}     True
-    Input Password       ${password_field}      ${password}     True
-    Click Button        ${login_button}
+    SeleniumLibrary.Input Text  ${username_field}   ${marilyn_username}     True
+    SeleniumLibrary.Input Password       ${password_field}      ${password}     True
+    SeleniumLibrary.Click Button        ${login_button}
