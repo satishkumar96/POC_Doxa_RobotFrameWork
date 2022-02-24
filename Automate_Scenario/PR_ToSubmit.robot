@@ -47,14 +47,23 @@ lOGIN FOR MARILYN
 
     SeleniumLibrary.Scroll Element Into View    xpath://h3[text()='Conversations']
     SeleniumLibrary.Double Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]
-    SeleniumLibrary.Press Keys      None    ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT+ARROW_RIGHT
-    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="taxCode"]   action_chain=True
-    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="taxCode"]   action_chain=True
 
-    ${taxCode_coor} =  Create List  ${838}  ${446}  ${131}  ${25}
-    Log To Console  ${taxCode_coor}
+    FOR    ${i}    IN RANGE    45
+            Press Keys  None    ARROW_RIGHT
+    END
 
-    SikuliLibrary.Click On Region   ${taxCode_coor}
+    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="taxCode"]   action_chain=True
+    SeleniumLibrary.Click Element    xpath://div[@class=" css-g1d714-ValueContainer"]   action_chain=True
+
+    ${taxCode_Opt} =  Create List  ${1254}  ${445}  ${133}  ${26}
+    SikuliLibrary.Click On Region   ${taxCode_Opt}
+
+    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]   action_chain=True
+    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]   action_chain=True
+    SeleniumLibrary.Click Element    xpath://div[@class=" css-g1d714-ValueContainer"]   action_chain=True
+
+    ${curr_Opt} =  Create List  ${630}  ${451}  ${157}  ${28}
+    SikuliLibrary.Click On Region   ${curr_Opt}
 
 #    Close All Browsers
 

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220224 18:32:33.971" rpa="false" schemaversion="2">
+<suite id="s1" name="PR Pending Approval" source="C:\Users\SatishKumar\PycharmProjects\POC_Doxa_RobotFrameWork\Automate_Scenario\PR_Pending_Approval.robot">
+<test id="s1-t1" name="Login for Chris">
+<kw name="Open Browser and Maximize window">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220224 18:32:34.418" level="INFO">Opening browser 'gc' to base url 'https://auth-stag.doxa-holdings.com/login'.</msg>
+<status status="PASS" starttime="20220224 18:32:34.417" endtime="20220224 18:32:40.164"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220224 18:32:40.165" endtime="20220224 18:32:40.307"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220224 18:32:40.307" endtime="20220224 18:32:40.310"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220224 18:32:40.311" endtime="20220224 18:32:40.313"/>
+</kw>
+<status status="PASS" starttime="20220224 18:32:34.417" endtime="20220224 18:32:40.313"/>
+</kw>
+<kw name="chris login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_field}</arg>
+<arg>${chris_username}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:40.317" level="INFO">Typing text 'chris.p2papp@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220224 18:32:40.315" endtime="20220224 18:32:40.538"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<arg>True</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:40.540" level="INFO">Typing password into text field 'xpath://input[@id='password']'.</msg>
+<msg timestamp="20220224 18:32:40.633" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220224 18:32:40.734" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220224 18:32:40.538" endtime="20220224 18:32:40.734"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:40.735" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220224 18:32:40.734" endtime="20220224 18:32:55.569"/>
+</kw>
+<status status="PASS" starttime="20220224 18:32:40.314" endtime="20220224 18:32:55.570"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10 seconds</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220224 18:32:55.573" endtime="20220224 18:32:56.873"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Requisition_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:56.877" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[2]/div[1]/nav/div/div/ul/div[3]'.</msg>
+<status status="PASS" starttime="20220224 18:32:56.876" endtime="20220224 18:32:57.528"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Requisition_List}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:57.529" level="INFO">Clicking element 'xpath://span[text()='Requisitions']'.</msg>
+<status status="PASS" starttime="20220224 18:32:57.528" endtime="20220224 18:32:57.612"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PR_List}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:57.613" level="INFO">Clicking element 'xpath://span[text()='PRs List']'.</msg>
+<status status="PASS" starttime="20220224 18:32:57.612" endtime="20220224 18:32:58.105"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="agGridReact"]/div/div/div[2]/div[2]/div[3]/div[2]/div/div/div[1]</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220224 18:32:58.107" level="INFO">Double clicking element 'xpath://*[@id="agGridReact"]/div/div/div[2]/div[2]/div[3]/div[2]/div/div/div[1]'.</msg>
+<status status="PASS" starttime="20220224 18:32:58.107" endtime="20220224 18:32:58.622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="root"]/div/div[2]/div[2]/div/form/footer/div/div/div/button[3]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220224 18:32:58.627" endtime="20220224 18:33:03.780"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://*[@id="root"]/div/div[2]/div[2]/div/form/footer/div/div/div/button[3]</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220224 18:33:03.781" endtime="20220224 18:33:03.963"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="root"]/div/div[2]/div[2]/div/form/footer/div/div/div/button[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220224 18:33:03.965" level="INFO">Clicking button 'xpath://*[@id="root"]/div/div[2]/div[2]/div/form/footer/div/div/div/button[3]'.</msg>
+<status status="PASS" starttime="20220224 18:33:03.964" endtime="20220224 18:33:04.189"/>
+</kw>
+<status status="PASS" starttime="20220224 18:32:34.416" endtime="20220224 18:33:04.193"/>
+</test>
+<status status="PASS" starttime="20220224 18:32:33.974" endtime="20220224 18:33:04.197"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PR Pending Approval">PR Pending Approval</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
