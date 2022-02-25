@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library  SeleniumLibrary
 
 *** Variables ***
 #Username and password to be entered
