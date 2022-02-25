@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library     String
+Library     SikuliLibrary
 
 *** Variables ***
 #Username and password to be entered
@@ -37,59 +38,67 @@ Login for Marilyn
     Wait Until Page Contains Element    xpath://span[text()='Add Manual']/..
     Click Button    xpath://span[text()='Add Manual']/..
 
+    ${itemCode} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
     Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]
     Click Element   xpath:(//div[@col-id="itemCode"])[2]
-    Press Keys      None    Random
+    Press Keys      None    ${itemCode}
 
+    ${itemName} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
     Click Element   xpath:(//div[@col-id="itemName"])[2]
-    Press Keys      None    Random
+    Press Keys      None    ${itemName}
 
     Click Element   xpath:(//div[@col-id="itemCategory"])[2]
     Click Element   xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..
+    ${category} =  Create List  ${822}  ${582}  ${165}  ${29}
+    Click On Region   ${category}
 
+    ${itemDesc} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    Click Element   xpath:(//div[@col-id="itemDescription"])[2]
+    Press Keys      None    ${itemDesc}
 
+    Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]  action_chain=True
+    FOR    ${i}    IN RANGE    10
+            Press Keys  None    ARROW_RIGHT
+    END
 
-#    Click Element   xpath:(//div[@col-id="itemDescription"])[2]
-#    Press Keys      None    Random
-#
-#    Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]  action_chain=True
-#    FOR    ${i}    IN RANGE    10
-#            Press Keys  None    ARROW_RIGHT
-#    END
-#
-#    Click Element   xpath:(//div[@col-id="itemModel"])[2]
-#    Press Keys      None    Random
-#
-#    Click Element   xpath:(//div[@col-id="itemSize"])[2]
-#    Press Keys      None    Random
-#
-#    Click Element   xpath:(//div[@col-id="itemBrand"])[2]
-#    Press Keys      None    Random
-#
-#    Double Click Element   xpath:(//div[@col-id="uomCode"])[2]
-#    Click Element   xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..
-#
-#    Click Element   xpath:(//div[@col-id="quantity"])[2]
-#
-#
-#    Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]  action_chain=True
-#    FOR    ${i}    IN RANGE    10
-#            Press Keys  None    ARROW_RIGHT
-#    END
-#
-#    Click Element   xpath:(//div[@col-id="note"])[2]
-#    Press Keys      None    Random
+    ${itemMode} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    Click Element   xpath:(//div[@col-id="itemModel"])[2]
+    Press Keys      None    ${itemMode}
 
-#    Close Browser
+    ${itemSize} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    Click Element   xpath:(//div[@col-id="itemSize"])[2]
+    Press Keys      None    ${itemSize}
+
+    ${itemBrand} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    Click Element   xpath:(//div[@col-id="itemBrand"])[2]
+    Press Keys      None    ${itemBrand}
+
+    Double Click Element   xpath:(//div[@col-id="uomCode"])[2]
+    Click Element   xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..
+    ${uomCode} =  Create List  ${1270}  ${583}  ${165}  ${23}
+    Click On Region   ${uomCode}
+
+    Click Element   xpath:(//div[@col-id="quantity"])[2]
+
+    Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]  action_chain=True
+    FOR    ${i}    IN RANGE    10
+            Press Keys  None    ARROW_RIGHT
+    END
+
+    ${note} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    Click Element   xpath:(//div[@col-id="note"])[2]
+    Press Keys      None    ${note}
+
+    Close Browser
 *** Keywords ***
 Open Browser and Maximize window
     Open Browser    ${url}  ${browser}
     Maximize Browser Window
     Set Browser Implicit Wait   30
     Set Selenium Implicit Wait  30
-    Set Selenium Speed  0.5
+#    Set Selenium Speed  0.5
 
 marilyn login
-    Input Text  ${username_field}   ${marilyn_username}     True
-    Input Password       ${password_field}      ${password}     True
-    Click Button        ${login_button}
+    SeleniumLibrary.Input Text  ${username_field}   ${marilyn_username}     True
+    SeleniumLibrary.Input Password       ${password_field}      ${password}     True
+    SeleniumLibrary.Click Button        ${login_button}
