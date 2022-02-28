@@ -89,7 +89,7 @@ Login for Marilyn
     Click Element   xpath:(//div[@col-id="note"])[2]
     Press Keys      None    ${note}
 
-    Close Browser
+#    Close Browser
 *** Keywords ***
 Open Browser and Maximize window
     Open Browser    ${url}  ${browser}

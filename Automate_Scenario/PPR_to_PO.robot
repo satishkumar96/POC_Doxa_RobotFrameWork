@@ -80,7 +80,7 @@ Login for Marilyn
 #    Internal Conversations Attachement
     Click Element   xpath:(//span[text()='Attachment'])[1]
     Click Button    xpath:(//span[text()='Add New'])[1]/..
-    Choose File     xpath:(//div[@ref="centerContainer"])[2]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
+#    Choose File     xpath:(//div[@ref="centerContainer"])[2]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
 
 #   External Conversation comment
     Input Text  xpath://div[@class='mb-4 row']//input[@placeholder='Please enter your comment here...']     Testing
@@ -89,9 +89,7 @@ Login for Marilyn
 #    External Conversations Attachement
     Click Element   xpath:(//span[text()='Attachment'])[3]
     Click Button    xpath:(//span[text()='Add New'])[2]/..
-    Choose File     xpath:(//div[@ref="centerContainer"])[3]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
-
-
+#    Choose File     xpath:(//div[@ref="centerContainer"])[3]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
 
 #   Submit Button
 #    Click Button    xpath://span[text()='Submit']/..
@@ -107,7 +105,7 @@ Open Browser and Maximize window
     Maximize Browser Window
     Set Browser Implicit Wait   30
     Set Selenium Implicit Wait  30
-    Set Selenium Speed	0.5 seconds
+#    Set Selenium Speed	0.5 seconds
 
 marilyn login
     Input Text  ${username_field}   ${marilyn_username}     True
