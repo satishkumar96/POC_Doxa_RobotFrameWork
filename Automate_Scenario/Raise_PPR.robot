@@ -12,8 +12,7 @@ ${url}      https://auth-stag.doxa-holdings.com/login
 ${browser}   gc
 
 *** Test Cases ***
-Marilyn Login
-    Common Login Scenario
+Raise PPR
     Enter Marilyn username
     Click Login Button
     Wait Until Page Contains    Dashboard   10
@@ -33,44 +32,42 @@ Marilyn Login
     Enter Delivery Address
     Click Add Manual Button
     Enter Manual Fields
+    Validate Internal Conversations
+    Validate External Conversations
+    Click PPR Raise Submit Button
+    Verify PPR
+    Sleep   5
+    Click Logout
 
 
-#    Add Catalogue
-#    Click Button    xpath://span[normalize-space()='Add Catalogue']/..
-#    Wait Until Page Contains    Catalogue Items
-#    Click Element   xpath:(//div[@ref="centerContainer"])[5]/div/div/div/div[1]/div/div/div/div[2]/input
-#    Click Button    xpath://button[text()='Add']
-#
-##    Click Element   xpath:(//div[@ref="eContainer"])[2]/div/div[5]
-##    Input Text  xpath:(//div[@ref="eContainer"])[2]/div/div[5]     50
-##    Click Element   xpath:(//div[@col-id="note"])[2]
-##    Input Text  xpath:(//div[@col-id="note"])[2]    Just For testing
-#
-##    Internal Conversations comment
-#    Input Text  xpath://div[@class='mb-2 row']//input[@placeholder='Please enter your comment here...']     Testing
-#    Click Button    xpath:(//button[text()='Send'])[1]
-#
-##    Internal Conversations Attachement
-#    Click Element   xpath:(//span[text()='Attachment'])[1]
-#    Click Button    xpath:(//span[text()='Add New'])[1]/..
-##    Choose File     xpath:(//div[@ref="centerContainer"])[2]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
-#
-##   External Conversation comment
-#    Input Text  xpath://div[@class='mb-4 row']//input[@placeholder='Please enter your comment here...']     Testing
-#    Click Button    xpath://div[@class='mb-4 row']//button[@type='button'][normalize-space()='Send']
-#
-##    External Conversations Attachement
-#    Click Element   xpath:(//span[text()='Attachment'])[3]
-#    Click Button    xpath:(//span[text()='Add New'])[2]/..
-#    Choose File     xpath:(//div[@ref="centerContainer"])[3]/div/div/div/div[3]/div/input   ${CURDIR}\\Data_Files\\doxa.png
+Approve PPR
+    Enter Chris username
+    Click Login Button
+    Wait Until Page Contains    Dashboard   10
 
-#   Submit Button
-#    Click Button    xpath://span[text()='Submit']/..
+    Click Requisition Tab
+    Click Pre Purchase Requisition Tab
+    Click Purchase Pre-Requisitions List
+    Select first List
+    Scroll down to Audit Trail
+    Click Approve Button
+    Sleep   5
+    Click Logout
 
-#Login for Chris
-#    chris login
-#    Wait Until Page Contains    Dashboard
-#    do logout
+Convert to PR
+    Enter Marilyn username
+    Click Login Button
+    Wait Until Page Contains    Dashboard   10
+
+    Click Requisition Tab
+    Click Pre Purchase Requisition Tab
+    Click Purchase Pre-Requisitions List
+    Select first List
+    Scroll down to Audit Trail
+    Click Convert to Request
+    Sleep   5
+    Select first List
+    Submit Purchase Request Details
 
 *** Keywords ***
 Login Setup
@@ -85,19 +82,32 @@ Login Teardown
 Click Login Button
     ${submit_loc} =  fetchExcel.Fetch Login Excel     Locators       ${4}    ${2}
 
+    Wait Until Page Contains Element    ${submit_loc}      10
     Click Button    ${submit_loc}
 
-Common Login Scenario
-    ${password_loc} =  fetchExcel.Fetch Login Excel     Locators       ${3}    ${2}
-    ${password} =  fetchExcel.Fetch Login Excel     TestData       ${2}    ${2}
+Click Logout
+    ${logout_btn} =    fetchExcel.Fetch Login Excel     Locators       ${5}    ${2}
+    Wait Until Page Contains Element    ${logout_btn}      10
 
-    SeleniumLibrary.Input Text  ${password_loc}     ${password}     True
+    Click Element   ${logout_btn}
 
 Enter Marilyn username
-    ${username_loc} =  fetchExcel.Fetch Login Excel     Locators       ${2}    ${2}
-    ${marilyn_username} =  fetchExcel.Fetch Login Excel     TestData       ${2}    ${1}
+    ${username_loc} =       fetchExcel.Fetch Login Excel     Locators       ${2}    ${2}
+    ${marilyn_username} =   fetchExcel.Fetch Login Excel     TestData       ${2}    ${1}
+    ${password_loc} =       fetchExcel.Fetch Login Excel     Locators       ${3}    ${2}
+    ${password} =           fetchExcel.Fetch Login Excel     TestData       ${2}    ${2}
 
     SeleniumLibrary.Input Text  ${username_loc}     ${marilyn_username}     True
+    SeleniumLibrary.Input Text  ${password_loc}     ${password}     True
+
+Enter Chris username
+    ${username_loc} =       fetchExcel.Fetch Login Excel     Locators       ${2}    ${2}
+    ${chris_username} =     fetchExcel.Fetch Login Excel     TestData       ${3}    ${1}
+    ${password_loc} =       fetchExcel.Fetch Login Excel     Locators       ${3}    ${2}
+    ${password} =           fetchExcel.Fetch Login Excel     TestData       ${3}    ${2}
+
+    SeleniumLibrary.Input Text  ${username_loc}     ${chris_username}     True
+    SeleniumLibrary.Input Text  ${password_loc}     ${password}     True
 
 Click Requisition Tab
     ${requisition_tab} =  fetchExcel.Fetch Login Excel     Locators       ${6}    ${2}
@@ -121,15 +131,17 @@ Select Type of Requisition
 
 Select Nature of Requisition
     ${requisition_nature} =  fetchExcel.Fetch Login Excel     Locators       ${10}    ${2}
+    ${select_requistion} =   fetchExcel.Fetch Login Excel     TestData       ${2}    ${3}
 
     Click Element   ${requisition_nature}
-    Select From List By Label   ${requisition_nature}    Non-Project
+    Select From List By Label   ${requisition_nature}    ${select_requistion}
 
 Select Currency
     ${curr} =  fetchExcel.Fetch Login Excel     Locators       ${11}    ${2}
+    ${select_curr} =    fetchExcel.Fetch Login Excel     TestData       ${2}    ${4}
 
     Click Element   ${curr}
-    Select From List By Label   ${curr}        Singapore Dollar (+SGD)
+    Select From List By Label   ${curr}        ${select_curr}
 
 Enter PPR Title
     ${ppr_title} =  fetchExcel.Fetch Login Excel     Locators       ${12}    ${2}
@@ -139,15 +151,17 @@ Enter PPR Title
 
 Select Procuement Type
     ${procurement} =    fetchExcel.Fetch Login Excel     Locators       ${13}    ${2}
+    ${select_procurement} =     fetchExcel.Fetch Login Excel     TestData       ${2}    ${5}
 
     Click Element   ${procurement}
-    Select From List By Label   ${procurement}     Goods
+    Select From List By Label   ${procurement}     ${select_procurement}
 
 Select Approval Route
     ${approval_route} =     fetchExcel.Fetch Login Excel     Locators       ${14}    ${2}
+    ${select_approve_route} =   fetchExcel.Fetch Login Excel     TestData       ${2}    ${6}
 
     Click Element   ${approval_route}
-    Select From List By Label   ${approval_route}      PPR approver
+    Select From List By Label   ${approval_route}      ${select_approve_route}
 
 Enter Delivery Date
     ${delivery_date} =  fetchExcel.Fetch Login Excel     Locators       ${15}    ${2}
@@ -162,9 +176,10 @@ Enter Delivery Note
 
 Enter Delivery Address
     ${deliveri_address} =   fetchExcel.Fetch Login Excel     Locators       ${17}    ${2}
+    ${select_delivery_address} =    fetchExcel.Fetch Login Excel     TestData       ${2}    ${7}
 
     Click Element   ${deliveri_address}
-    Select From List By Label   ${deliveri_address}    Jalan Besar
+    Select From List By Label   ${deliveri_address}    ${select_delivery_address}
 
 Click Add Manual Button
     ${add_manual} =     fetchExcel.Fetch Login Excel        Locators        ${18}   ${2}
@@ -177,16 +192,28 @@ Click Add Manual Button
     Click Button    ${add_manual}
 
 Enter Manual Fields
-    ${itemCode_text} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
-    ${itemName_text} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
-    ${itemDesc_text} =	Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${itemCode_text} =	    Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${itemName_text} =	    Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${itemDesc_text} =	    Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${itemMode_text} =	    Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${itemBrand_text} =	    Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${itemSize_text} =	    Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${note_text} =	        Generate Random String  12   [LOWER][NUMBERS][UPPER]
+    ${quantity_value} =     Generate Random String  2   [NUMBERS]
 
-    ${itemcode} =       fetchExcel.Fetch Login Excel    Locators    ${20}   ${2}
-    ${itemName} =       fetchExcel.Fetch Login Excel    Locators    ${21}   ${2}
-    ${itemCategory} =   fetchExcel.Fetch Login Excel    Locators    ${22}   ${2}
-    ${itemCategory_dropdown} =  fetchExcel.Fetch Login Excel    Locators    ${23}   ${2}
-    ${itemDescription} =     fetchExcel.Fetch Login Excel    Locators    ${24}   ${2}
+    ${itemcode} =               fetchExcel.Fetch Login Excel    Locators    ${20}   ${2}
+    ${itemName} =               fetchExcel.Fetch Login Excel    Locators    ${21}   ${2}
+    ${itemCategory} =           fetchExcel.Fetch Login Excel    Locators    ${22}   ${2}
+    ${dropdown_list} =          fetchExcel.Fetch Login Excel    Locators    ${23}   ${2}
+    ${itemDescription} =        fetchExcel.Fetch Login Excel    Locators    ${24}   ${2}
     ${add_item_white_space} =   fetchExcel.Fetch Login Excel    Locators    ${25}   ${2}
+    ${itemMode} =               fetchExcel.Fetch Login Excel    Locators    ${26}   ${2}
+    ${itemSize} =               fetchExcel.Fetch Login Excel    Locators    ${27}   ${2}
+    ${itemBrand} =              fetchExcel.Fetch Login Excel    Locators    ${28}   ${2}
+    ${uomCode} =                fetchExcel.Fetch Login Excel    Locators    ${29}   ${2}
+    ${note} =                   fetchExcel.Fetch Login Excel    Locators    ${30}   ${2}
+    ${quantity} =               fetchExcel.Fetch Login Excel    Locators    ${36}   ${2}
+
 
     Click Element   ${itemcode}
     Press Keys      None    ${itemCode_text}
@@ -195,10 +222,9 @@ Enter Manual Fields
     Press Keys      None    ${itemName_text}
 
     Click Element   ${itemCategory}
-    Click Element   ${itemCategory_dropdown}
+    Click Element   ${dropdown_list}
     ${category} =  Create List  ${834}  ${499}  ${151}  ${20}
     Click On Region   ${category}
-
 
     Click Element   ${itemDescription}
     Press Keys      None    ${itemDesc_text}
@@ -208,5 +234,147 @@ Enter Manual Fields
             Press Keys  None    ARROW_RIGHT
     END
 
+    Click Element   ${itemMode}
+    Press Keys      None    ${itemMode_text}
 
 
+    Click Element   ${itemSize}
+    Press Keys      None    ${itemSize_text}
+
+
+    Click Element   ${itemBrand}
+    Press Keys      None    ${itemBrand_text}
+
+    Double Click Element   ${uomCode}
+    Click Element   ${dropdown_list}
+    ${uomCode_region} =  Create List  ${1284}  ${498}  ${110}  ${24}
+    Click On Region   ${uomCode_region}
+
+    Click Element   ${add_item_white_space}  action_chain=True
+    FOR    ${i}    IN RANGE    10
+            Press Keys  None    ARROW_RIGHT
+    END
+
+    Click Element   ${note}
+    Press Keys      None    ${note_text}
+
+    Click Element   ${quantity}
+    Press Keys      None    ${quantity_value}
+
+Validate Internal Conversations
+    ${comment_box} =    fetchExcel.Fetch Login Excel    Locators    ${31}   ${2}
+    ${send_button} =    fetchExcel.Fetch Login Excel    Locators    ${32}   ${2}
+    ${comment_text} =   fetchExcel.Fetch Login Excel     TestData       ${2}    ${8}
+
+    SeleniumLibrary.Input Text      ${comment_box}    ${comment_text}
+    Click Button  ${send_button}
+
+Validate External Conversations
+    ${comment_box} =    fetchExcel.Fetch Login Excel    Locators    ${33}   ${2}
+    ${send_button} =    fetchExcel.Fetch Login Excel    Locators    ${34}   ${2}
+    ${comment_text} =   fetchExcel.Fetch Login Excel     TestData       ${2}    ${8}
+
+    SeleniumLibrary.Input Text      ${comment_box}    ${comment_text}
+    Click Button  ${send_button}
+
+Click PPR Raise Submit Button
+    ${submit_button} =  fetchExcel.Fetch Login Excel    Locators    ${35}   ${2}
+
+    Click Button    ${submit_button}
+
+Verify PPR
+    ${Purchase_Pre_Requisitions_List_Header} =  fetchExcel.Fetch Login Excel    Locators    ${37}   ${2}
+
+    Wait Until Page Contains Element    ${Purchase_Pre_Requisitions_List_Header}      10
+
+Click Purchase Pre-Requisitions List
+    ${Purchase_Pre_Requisitions_List} =     fetchExcel.Fetch Login Excel    Locators    ${38}   ${2}
+
+    Click Element   ${Purchase_Pre_Requisitions_List}
+
+Select first List
+    ${Pre_Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
+
+    Double Click Element        ${Pre_Requisitions_first_List}
+
+Scroll down to Audit Trail
+    ${Audit_trail} =    fetchExcel.Fetch Login Excel    Locators    ${40}   ${2}
+
+    Scroll Element Into View    ${Audit_trail}
+
+Click Approve Button
+    ${Approve_button} =     fetchExcel.Fetch Login Excel    Locators    ${41}   ${2}
+
+    Element Should Be Visible   ${Approve_button}
+    Click Button    ${Approve_button}
+
+
+Click Convert to Request
+    ${convert_to_request_button} =     fetchExcel.Fetch Login Excel    Locators    ${42}   ${2}
+
+    Element Should Be Visible   ${convert_to_request_button}
+    Click Button    ${convert_to_request_button}
+
+Submit Purchase Request Details
+    ${clear_all} =  fetchExcel.Fetch Login Excel    Locators    ${43}   ${2}
+    ${supplier_code} =  fetchExcel.Fetch Login Excel    Locators    ${44}   ${2}
+    ${supplier_code_list_box} =     fetchExcel.Fetch Login Excel    Locators    ${45}   ${2}
+    ${ss0001} =      fetchExcel.Fetch Login Excel    Locators    ${46}   ${2}
+    ${submit_Btn} =     fetchExcel.Fetch Login Excel    Locators    ${47}   ${2}
+    ${approval_route} =     fetchExcel.Fetch Login Excel    Locators    ${48}   ${2}
+    ${select_approval_route} =  fetchExcel.Fetch Login Excel    TestData    ${2}   ${9}
+    ${conversation} =   fetchExcel.Fetch Login Excel    Locators    ${19}   ${2}
+    ${add_item_white_space} =   fetchExcel.Fetch Login Excel    Locators    ${25}   ${2}
+    ${taxCode} =        fetchExcel.Fetch Login Excel    Locators    ${49}   ${2}
+    ${dropdown_list} =          fetchExcel.Fetch Login Excel    Locators    ${23}   ${2}
+    ${currency} =       fetchExcel.Fetch Login Excel    Locators    ${50}   ${2}
+    ${currency_opt} =   fetchExcel.Fetch Login Excel    Locators    ${51}   ${2}
+    ${supplier_uid} =   fetchExcel.Fetch Login Excel    Locators    ${52}   ${2}
+    ${submit_button} =  fetchExcel.Fetch Login Excel    Locators    ${53}   ${2}
+
+    Wait Until Element Is Visible       ${submit_Btn}       10
+    Wait Until Element Is Enabled       ${submit_Btn}       10
+
+    Click Element   ${approval_route}      action_chain=True
+    Select From List By Label   ${approval_route}      ${select_approval_route}
+
+    Click Button    ${clear_all}
+    Click Element   ${supplier_code}
+    Wait Until Element Is Visible   ${supplier_code_list_box}
+    Click Element   ${ss0001}     action_chain=True
+    Press Keys      None   ESCAPE
+
+    Scroll Element Into View    ${conversation}
+    Double Click Element        ${add_item_white_space}
+
+    FOR    ${i}    IN RANGE    50
+            Press Keys  None    ARROW_RIGHT
+    END
+
+    Click Element   ${taxCode}
+    Click Element   ${dropdown_list}
+    ${taxCode_Opt} =  Create List  ${1032}  ${445}  ${183}  ${21}
+    SikuliLibrary.Click On Region   ${taxCode_Opt}
+
+    Click Element   ${currency}     action_chain=True
+    Click Element   ${currency}     action_chain=True
+    Click Element   ${currency_opt}     action_chain=True
+
+    ${curr_Opt} =  Create List  ${438}  ${449}  ${168}  ${26}
+    SikuliLibrary.Click On Region   ${curr_Opt}
+
+    Double Click Element        ${add_item_white_space}
+    FOR    ${i}    IN RANGE    20
+            Press Keys  None    ARROW_LEFT
+    END
+
+    Click Element   ${supplier_uid}
+
+    ${supply_code} =  Create List  ${638}  ${405}  ${139}  ${33}
+    Click On Region   ${supply_code}
+    Press Keys  None    ARROW_DOWN
+    Press Keys  None    ENTER
+
+    Click Button     ${submit_button}
+    Handle Alert
+    Sleep   5

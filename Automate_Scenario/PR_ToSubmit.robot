@@ -48,23 +48,39 @@ lOGIN FOR MARILYN
     SeleniumLibrary.Scroll Element Into View    xpath://h3[text()='Conversations']
     SeleniumLibrary.Double Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]
 
-    FOR    ${i}    IN RANGE    45
+    FOR    ${i}    IN RANGE    50
             Press Keys  None    ARROW_RIGHT
     END
 
-    SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="taxCode"]   action_chain=True
-    SeleniumLibrary.Click Element    xpath://div[@class=" css-g1d714-ValueContainer"]   action_chain=True
+    SeleniumLibrary.Click Element    xpath:(//div[@col-id="taxCode"])[2]
+    SeleniumLibrary.Click Element    xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..
 
-    ${taxCode_Opt} =  Create List  ${1254}  ${445}  ${133}  ${26}
+    ${taxCode_Opt} =  Create List  ${1032}  ${445}  ${183}  ${21}
     SikuliLibrary.Click On Region   ${taxCode_Opt}
 
     SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]   action_chain=True
     SeleniumLibrary.Click Element    xpath:(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]   action_chain=True
     SeleniumLibrary.Click Element    xpath://div[@class=" css-g1d714-ValueContainer"]   action_chain=True
 
-    ${curr_Opt} =  Create List  ${630}  ${451}  ${157}  ${28}
+    ${curr_Opt} =  Create List  ${438}  ${449}  ${168}  ${26}
     SikuliLibrary.Click On Region   ${curr_Opt}
 
+    SeleniumLibrary.Double Click Element   xpath:(//div[@class="ag-center-cols-viewport"])[1]
+    FOR    ${i}    IN RANGE    20
+            Press Keys  None    ARROW_LEFT
+    END
+
+    Click Element   xpath:(//div[@col-id="supplierUuid"])[2]
+
+    ${supply_code} =  Create List  ${638}  ${405}  ${139}  ${33}
+    Click On Region   ${supply_code}
+    Press Keys  None    ARROW_DOWN
+    Press Keys  None    ENTER
+
+#    Click Button    xpath://button[text()='Submit']
+#    Handle Alert
+#    Sleep   5
+#    Click Element   xpath://li[@class='ml-2 nav-item']//a[@class='nav-link']
 #    Close All Browsers
 
 *** Keywords ***

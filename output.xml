@@ -1,84 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220301 17:29:56.345" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220301 23:04:03.209" rpa="false" schemaversion="2">
 <suite id="s1" name="Raise PPR" source="C:\Users\SatishKumar\PycharmProjects\POC_Doxa_RobotFrameWork\Automate_Scenario\Raise_PPR.robot">
 <kw name="Login Setup" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220301 17:30:02.455" level="INFO">Opening browser 'gc' to base url 'https://auth-stag.doxa-holdings.com/login'.</msg>
-<status status="PASS" starttime="20220301 17:30:02.455" endtime="20220301 17:30:06.519"/>
+<msg timestamp="20220301 23:04:09.378" level="INFO">Opening browser 'gc' to base url 'https://auth-stag.doxa-holdings.com/login'.</msg>
+<status status="PASS" starttime="20220301 23:04:09.378" endtime="20220301 23:04:13.380"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220301 17:30:06.520" endtime="20220301 17:30:06.638"/>
+<status status="PASS" starttime="20220301 23:04:13.380" endtime="20220301 23:04:13.513"/>
 </kw>
 <kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <arg>30</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220301 17:30:06.638" endtime="20220301 17:30:06.638"/>
+<status status="PASS" starttime="20220301 23:04:13.514" endtime="20220301 23:04:13.516"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220301 17:30:06.638" endtime="20220301 17:30:06.638"/>
+<status status="PASS" starttime="20220301 23:04:13.516" endtime="20220301 23:04:13.518"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:02.455" endtime="20220301 17:30:06.638"/>
+<status status="PASS" starttime="20220301 23:04:09.378" endtime="20220301 23:04:13.519"/>
 </kw>
-<test id="s1-t1" name="Marilyn Login">
-<kw name="Common Login Scenario">
-<kw name="Fetch Login Excel" library="fetchExcel">
-<var>${password_loc}</var>
-<arg>Locators</arg>
-<arg>${3}</arg>
-<arg>${2}</arg>
-<msg timestamp="20220301 17:30:06.654" level="INFO">${password_loc} = xpath://input[@id='password']</msg>
-<status status="PASS" starttime="20220301 17:30:06.638" endtime="20220301 17:30:06.654"/>
-</kw>
-<kw name="Fetch Login Excel" library="fetchExcel">
-<var>${password}</var>
-<arg>TestData</arg>
-<arg>${2}</arg>
-<arg>${2}</arg>
-<msg timestamp="20220301 17:30:06.674" level="INFO">${password} = P@ss2022</msg>
-<status status="PASS" starttime="20220301 17:30:06.654" endtime="20220301 17:30:06.674"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${password_loc}</arg>
-<arg>${password}</arg>
-<arg>True</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:06.674" level="INFO">Typing text 'P@ss2022' into text field 'xpath://input[@id='password']'.</msg>
-<status status="PASS" starttime="20220301 17:30:06.674" endtime="20220301 17:30:06.824"/>
-</kw>
-<status status="PASS" starttime="20220301 17:30:06.638" endtime="20220301 17:30:06.824"/>
-</kw>
+<test id="s1-t1" name="Raise PPR">
 <kw name="Enter Marilyn username">
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${username_loc}</var>
 <arg>Locators</arg>
 <arg>${2}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:06.846" level="INFO">${username_loc} = xpath://input[@id='email']</msg>
-<status status="PASS" starttime="20220301 17:30:06.826" endtime="20220301 17:30:06.846"/>
+<msg timestamp="20220301 23:04:13.533" level="INFO">${username_loc} = xpath://input[@id='email']</msg>
+<status status="PASS" starttime="20220301 23:04:13.521" endtime="20220301 23:04:13.533"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${marilyn_username}</var>
 <arg>TestData</arg>
 <arg>${2}</arg>
 <arg>${1}</arg>
-<msg timestamp="20220301 17:30:06.863" level="INFO">${marilyn_username} = marilyn.f@getnada.com</msg>
-<status status="PASS" starttime="20220301 17:30:06.846" endtime="20220301 17:30:06.863"/>
+<msg timestamp="20220301 23:04:13.548" level="INFO">${marilyn_username} = marilyn.f@getnada.com</msg>
+<status status="PASS" starttime="20220301 23:04:13.533" endtime="20220301 23:04:13.548"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${password_loc}</var>
+<arg>Locators</arg>
+<arg>${3}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:13.584" level="INFO">${password_loc} = xpath://input[@id='password']</msg>
+<status status="PASS" starttime="20220301 23:04:13.548" endtime="20220301 23:04:13.584"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${password}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:13.599" level="INFO">${password} = P@ss2022</msg>
+<status status="PASS" starttime="20220301 23:04:13.585" endtime="20220301 23:04:13.599"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username_loc}</arg>
 <arg>${marilyn_username}</arg>
 <arg>True</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:06.863" level="INFO">Typing text 'marilyn.f@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
-<status status="PASS" starttime="20220301 17:30:06.863" endtime="20220301 17:30:06.996"/>
+<msg timestamp="20220301 23:04:13.599" level="INFO">Typing text 'marilyn.f@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220301 23:04:13.599" endtime="20220301 23:04:13.747"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:06.825" endtime="20220301 17:30:06.996"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:13.748" level="INFO">Typing text 'P@ss2022' into text field 'xpath://input[@id='password']'.</msg>
+<status status="PASS" starttime="20220301 23:04:13.747" endtime="20220301 23:04:13.871"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:13.521" endtime="20220301 23:04:13.872"/>
 </kw>
 <kw name="Click Login Button">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -86,22 +83,28 @@
 <arg>Locators</arg>
 <arg>${4}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:07.011" level="INFO">${submit_loc} = xpath://button[text()='Login']</msg>
-<status status="PASS" starttime="20220301 17:30:06.997" endtime="20220301 17:30:07.011"/>
+<msg timestamp="20220301 23:04:13.893" level="INFO">${submit_loc} = xpath://button[text()='Login']</msg>
+<status status="PASS" starttime="20220301 23:04:13.873" endtime="20220301 23:04:13.893"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${submit_loc}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:04:13.893" endtime="20220301 23:04:13.911"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${submit_loc}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:07.012" level="INFO">Clicking button 'xpath://button[text()='Login']'.</msg>
-<status status="PASS" starttime="20220301 17:30:07.011" endtime="20220301 17:30:14.416"/>
+<msg timestamp="20220301 23:04:13.912" level="INFO">Clicking button 'xpath://button[text()='Login']'.</msg>
+<status status="PASS" starttime="20220301 23:04:13.912" endtime="20220301 23:04:23.390"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:06.996" endtime="20220301 17:30:14.417"/>
+<status status="PASS" starttime="20220301 23:04:13.872" endtime="20220301 23:04:23.390"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Dashboard</arg>
 <arg>10</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220301 17:30:14.418" endtime="20220301 17:30:15.750"/>
+<status status="PASS" starttime="20220301 23:04:23.391" endtime="20220301 23:04:24.625"/>
 </kw>
 <kw name="Click Requisition Tab">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -109,16 +112,16 @@
 <arg>Locators</arg>
 <arg>${6}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:15.770" level="INFO">${requisition_tab} = xpath://div[normalize-space()='Requisitions']</msg>
-<status status="PASS" starttime="20220301 17:30:15.752" endtime="20220301 17:30:15.770"/>
+<msg timestamp="20220301 23:04:24.658" level="INFO">${requisition_tab} = xpath://div[normalize-space()='Requisitions']</msg>
+<status status="PASS" starttime="20220301 23:04:24.631" endtime="20220301 23:04:24.658"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${requisition_tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:15.770" level="INFO">Clicking element 'xpath://div[normalize-space()='Requisitions']'.</msg>
-<status status="PASS" starttime="20220301 17:30:15.770" endtime="20220301 17:30:16.541"/>
+<msg timestamp="20220301 23:04:24.658" level="INFO">Clicking element 'xpath://div[normalize-space()='Requisitions']'.</msg>
+<status status="PASS" starttime="20220301 23:04:24.658" endtime="20220301 23:04:25.284"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:15.751" endtime="20220301 17:30:16.541"/>
+<status status="PASS" starttime="20220301 23:04:24.630" endtime="20220301 23:04:25.284"/>
 </kw>
 <kw name="Click Pre Purchase Requisition Tab">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -126,16 +129,16 @@
 <arg>Locators</arg>
 <arg>${7}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:16.559" level="INFO">${requisition_tab} = xpath://span[normalize-space()='Pre Purchase Requisition']</msg>
-<status status="PASS" starttime="20220301 17:30:16.542" endtime="20220301 17:30:16.559"/>
+<msg timestamp="20220301 23:04:25.310" level="INFO">${requisition_tab} = xpath://span[normalize-space()='Pre Purchase Requisition']</msg>
+<status status="PASS" starttime="20220301 23:04:25.286" endtime="20220301 23:04:25.311"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${requisition_tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:16.560" level="INFO">Clicking element 'xpath://span[normalize-space()='Pre Purchase Requisition']'.</msg>
-<status status="PASS" starttime="20220301 17:30:16.559" endtime="20220301 17:30:16.627"/>
+<msg timestamp="20220301 23:04:25.311" level="INFO">Clicking element 'xpath://span[normalize-space()='Pre Purchase Requisition']'.</msg>
+<status status="PASS" starttime="20220301 23:04:25.311" endtime="20220301 23:04:25.375"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:16.542" endtime="20220301 17:30:16.628"/>
+<status status="PASS" starttime="20220301 23:04:25.285" endtime="20220301 23:04:25.375"/>
 </kw>
 <kw name="Click Raise Pre-Requisition Tab">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -143,16 +146,16 @@
 <arg>Locators</arg>
 <arg>${8}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:16.644" level="INFO">${requisition_tab} = xpath://span[normalize-space()='Raise Pre-Requisition']</msg>
-<status status="PASS" starttime="20220301 17:30:16.629" endtime="20220301 17:30:16.644"/>
+<msg timestamp="20220301 23:04:25.401" level="INFO">${requisition_tab} = xpath://span[normalize-space()='Raise Pre-Requisition']</msg>
+<status status="PASS" starttime="20220301 23:04:25.376" endtime="20220301 23:04:25.401"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${requisition_tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:16.644" level="INFO">Clicking element 'xpath://span[normalize-space()='Raise Pre-Requisition']'.</msg>
-<status status="PASS" starttime="20220301 17:30:16.644" endtime="20220301 17:30:17.705"/>
+<msg timestamp="20220301 23:04:25.402" level="INFO">Clicking element 'xpath://span[normalize-space()='Raise Pre-Requisition']'.</msg>
+<status status="PASS" starttime="20220301 23:04:25.401" endtime="20220301 23:04:26.385"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:16.628" endtime="20220301 17:30:17.705"/>
+<status status="PASS" starttime="20220301 23:04:25.375" endtime="20220301 23:04:26.385"/>
 </kw>
 <kw name="Select Type of Requisition">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -160,17 +163,17 @@
 <arg>Locators</arg>
 <arg>${9}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:17.727" level="INFO">${requisition_type} = xpath://select[@name='requisitionType']</msg>
-<status status="PASS" starttime="20220301 17:30:17.707" endtime="20220301 17:30:17.727"/>
+<msg timestamp="20220301 23:04:26.417" level="INFO">${requisition_type} = xpath://select[@name='requisitionType']</msg>
+<status status="PASS" starttime="20220301 23:04:26.385" endtime="20220301 23:04:26.417"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>${requisition_type}</arg>
 <arg>Pre Purchase Requisition</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220301 17:30:17.727" level="INFO">Selecting options from selection list 'xpath://select[@name='requisitionType']' by label Pre Purchase Requisition.</msg>
-<status status="PASS" starttime="20220301 17:30:17.727" endtime="20220301 17:30:18.869"/>
+<msg timestamp="20220301 23:04:26.417" level="INFO">Selecting options from selection list 'xpath://select[@name='requisitionType']' by label Pre Purchase Requisition.</msg>
+<status status="PASS" starttime="20220301 23:04:26.417" endtime="20220301 23:04:27.692"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:17.707" endtime="20220301 17:30:18.870"/>
+<status status="PASS" starttime="20220301 23:04:26.385" endtime="20220301 23:04:27.692"/>
 </kw>
 <kw name="Select Nature of Requisition">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -178,23 +181,31 @@
 <arg>Locators</arg>
 <arg>${10}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:18.889" level="INFO">${requisition_nature} = xpath://select[@name='project']</msg>
-<status status="PASS" starttime="20220301 17:30:18.871" endtime="20220301 17:30:18.889"/>
+<msg timestamp="20220301 23:04:27.721" level="INFO">${requisition_nature} = xpath://select[@name='project']</msg>
+<status status="PASS" starttime="20220301 23:04:27.693" endtime="20220301 23:04:27.721"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${select_requistion}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${3}</arg>
+<msg timestamp="20220301 23:04:27.740" level="INFO">${select_requistion} = Non-Project</msg>
+<status status="PASS" starttime="20220301 23:04:27.722" endtime="20220301 23:04:27.740"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${requisition_nature}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:18.890" level="INFO">Clicking element 'xpath://select[@name='project']'.</msg>
-<status status="PASS" starttime="20220301 17:30:18.889" endtime="20220301 17:30:19.116"/>
+<msg timestamp="20220301 23:04:27.741" level="INFO">Clicking element 'xpath://select[@name='project']'.</msg>
+<status status="PASS" starttime="20220301 23:04:27.741" endtime="20220301 23:04:27.992"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>${requisition_nature}</arg>
-<arg>Non-Project</arg>
+<arg>${select_requistion}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220301 17:30:19.117" level="INFO">Selecting options from selection list 'xpath://select[@name='project']' by label Non-Project.</msg>
-<status status="PASS" starttime="20220301 17:30:19.116" endtime="20220301 17:30:19.176"/>
+<msg timestamp="20220301 23:04:27.993" level="INFO">Selecting options from selection list 'xpath://select[@name='project']' by label Non-Project.</msg>
+<status status="PASS" starttime="20220301 23:04:27.992" endtime="20220301 23:04:28.092"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:18.870" endtime="20220301 17:30:19.177"/>
+<status status="PASS" starttime="20220301 23:04:27.692" endtime="20220301 23:04:28.093"/>
 </kw>
 <kw name="Select Currency">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -202,23 +213,31 @@
 <arg>Locators</arg>
 <arg>${11}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:19.196" level="INFO">${curr} = xpath://select[@name='currencyCode']</msg>
-<status status="PASS" starttime="20220301 17:30:19.178" endtime="20220301 17:30:19.196"/>
+<msg timestamp="20220301 23:04:28.109" level="INFO">${curr} = xpath://select[@name='currencyCode']</msg>
+<status status="PASS" starttime="20220301 23:04:28.094" endtime="20220301 23:04:28.109"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${select_curr}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${4}</arg>
+<msg timestamp="20220301 23:04:28.125" level="INFO">${select_curr} = Singapore Dollar (+SGD)</msg>
+<status status="PASS" starttime="20220301 23:04:28.110" endtime="20220301 23:04:28.125"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${curr}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:19.197" level="INFO">Clicking element 'xpath://select[@name='currencyCode']'.</msg>
-<status status="PASS" starttime="20220301 17:30:19.196" endtime="20220301 17:30:19.434"/>
+<msg timestamp="20220301 23:04:28.125" level="INFO">Clicking element 'xpath://select[@name='currencyCode']'.</msg>
+<status status="PASS" starttime="20220301 23:04:28.125" endtime="20220301 23:04:28.321"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>${curr}</arg>
-<arg>Singapore Dollar (+SGD)</arg>
+<arg>${select_curr}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220301 17:30:19.437" level="INFO">Selecting options from selection list 'xpath://select[@name='currencyCode']' by label Singapore Dollar (+SGD).</msg>
-<status status="PASS" starttime="20220301 17:30:19.436" endtime="20220301 17:30:19.623"/>
+<msg timestamp="20220301 23:04:28.323" level="INFO">Selecting options from selection list 'xpath://select[@name='currencyCode']' by label Singapore Dollar (+SGD).</msg>
+<status status="PASS" starttime="20220301 23:04:28.322" endtime="20220301 23:04:28.505"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:19.178" endtime="20220301 17:30:19.623"/>
+<status status="PASS" starttime="20220301 23:04:28.093" endtime="20220301 23:04:28.505"/>
 </kw>
 <kw name="Enter PPR Title">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -226,26 +245,26 @@
 <arg>Locators</arg>
 <arg>${12}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:19.643" level="INFO">${ppr_title} = xpath://textarea[@placeholder='Enter PPR Title']</msg>
-<status status="PASS" starttime="20220301 17:30:19.625" endtime="20220301 17:30:19.643"/>
+<msg timestamp="20220301 23:04:28.524" level="INFO">${ppr_title} = xpath://textarea[@placeholder='Enter PPR Title']</msg>
+<status status="PASS" starttime="20220301 23:04:28.507" endtime="20220301 23:04:28.524"/>
 </kw>
 <kw name="Generate Random String" library="String">
 <var>${ppr_text}</var>
 <arg>8</arg>
 <arg>[LOWER][NUMBERS][UPPER]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20220301 17:30:19.643" level="INFO">${ppr_text} = rUsTp19m</msg>
-<status status="PASS" starttime="20220301 17:30:19.643" endtime="20220301 17:30:19.643"/>
+<msg timestamp="20220301 23:04:28.524" level="INFO">${ppr_text} = YMSJaSyb</msg>
+<status status="PASS" starttime="20220301 23:04:28.524" endtime="20220301 23:04:28.524"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${ppr_title}</arg>
 <arg>Test${ppr_text}</arg>
 <arg>True</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:19.644" level="INFO">Typing text 'TestrUsTp19m' into text field 'xpath://textarea[@placeholder='Enter PPR Title']'.</msg>
-<status status="PASS" starttime="20220301 17:30:19.644" endtime="20220301 17:30:20.561"/>
+<msg timestamp="20220301 23:04:28.525" level="INFO">Typing text 'TestYMSJaSyb' into text field 'xpath://textarea[@placeholder='Enter PPR Title']'.</msg>
+<status status="PASS" starttime="20220301 23:04:28.524" endtime="20220301 23:04:29.470"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:19.624" endtime="20220301 17:30:20.561"/>
+<status status="PASS" starttime="20220301 23:04:28.506" endtime="20220301 23:04:29.470"/>
 </kw>
 <kw name="Select Procuement Type">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -253,23 +272,31 @@
 <arg>Locators</arg>
 <arg>${13}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:20.578" level="INFO">${procurement} = xpath://select[@name='procurementType']</msg>
-<status status="PASS" starttime="20220301 17:30:20.562" endtime="20220301 17:30:20.578"/>
+<msg timestamp="20220301 23:04:29.498" level="INFO">${procurement} = xpath://select[@name='procurementType']</msg>
+<status status="PASS" starttime="20220301 23:04:29.471" endtime="20220301 23:04:29.498"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${select_procurement}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${5}</arg>
+<msg timestamp="20220301 23:04:29.520" level="INFO">${select_procurement} = Goods</msg>
+<status status="PASS" starttime="20220301 23:04:29.499" endtime="20220301 23:04:29.520"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${procurement}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:20.579" level="INFO">Clicking element 'xpath://select[@name='procurementType']'.</msg>
-<status status="PASS" starttime="20220301 17:30:20.578" endtime="20220301 17:30:20.965"/>
+<msg timestamp="20220301 23:04:29.521" level="INFO">Clicking element 'xpath://select[@name='procurementType']'.</msg>
+<status status="PASS" starttime="20220301 23:04:29.520" endtime="20220301 23:04:29.862"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>${procurement}</arg>
-<arg>Goods</arg>
+<arg>${select_procurement}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220301 17:30:20.966" level="INFO">Selecting options from selection list 'xpath://select[@name='procurementType']' by label Goods.</msg>
-<status status="PASS" starttime="20220301 17:30:20.965" endtime="20220301 17:30:21.127"/>
+<msg timestamp="20220301 23:04:29.863" level="INFO">Selecting options from selection list 'xpath://select[@name='procurementType']' by label Goods.</msg>
+<status status="PASS" starttime="20220301 23:04:29.862" endtime="20220301 23:04:30.049"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:20.561" endtime="20220301 17:30:21.127"/>
+<status status="PASS" starttime="20220301 23:04:29.471" endtime="20220301 23:04:30.049"/>
 </kw>
 <kw name="Select Approval Route">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -277,23 +304,31 @@
 <arg>Locators</arg>
 <arg>${14}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:21.150" level="INFO">${approval_route} = xpath://select[@name='approvalRoute']</msg>
-<status status="PASS" starttime="20220301 17:30:21.128" endtime="20220301 17:30:21.150"/>
+<msg timestamp="20220301 23:04:30.069" level="INFO">${approval_route} = xpath://select[@name='approvalRoute']</msg>
+<status status="PASS" starttime="20220301 23:04:30.051" endtime="20220301 23:04:30.069"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${select_approve_route}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${6}</arg>
+<msg timestamp="20220301 23:04:30.088" level="INFO">${select_approve_route} = PPR approver</msg>
+<status status="PASS" starttime="20220301 23:04:30.069" endtime="20220301 23:04:30.088"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${approval_route}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:21.152" level="INFO">Clicking element 'xpath://select[@name='approvalRoute']'.</msg>
-<status status="PASS" starttime="20220301 17:30:21.150" endtime="20220301 17:30:21.347"/>
+<msg timestamp="20220301 23:04:30.089" level="INFO">Clicking element 'xpath://select[@name='approvalRoute']'.</msg>
+<status status="PASS" starttime="20220301 23:04:30.088" endtime="20220301 23:04:30.271"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>${approval_route}</arg>
-<arg>PPR approver</arg>
+<arg>${select_approve_route}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220301 17:30:21.348" level="INFO">Selecting options from selection list 'xpath://select[@name='approvalRoute']' by label PPR approver.</msg>
-<status status="PASS" starttime="20220301 17:30:21.347" endtime="20220301 17:30:21.610"/>
+<msg timestamp="20220301 23:04:30.272" level="INFO">Selecting options from selection list 'xpath://select[@name='approvalRoute']' by label PPR approver.</msg>
+<status status="PASS" starttime="20220301 23:04:30.271" endtime="20220301 23:04:30.516"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:21.128" endtime="20220301 17:30:21.610"/>
+<status status="PASS" starttime="20220301 23:04:30.050" endtime="20220301 23:04:30.516"/>
 </kw>
 <kw name="Enter Delivery Date">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -301,17 +336,17 @@
 <arg>Locators</arg>
 <arg>${15}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:21.633" level="INFO">${delivery_date} = xpath://input[@name='deliveryDate']</msg>
-<status status="PASS" starttime="20220301 17:30:21.612" endtime="20220301 17:30:21.634"/>
+<msg timestamp="20220301 23:04:30.544" level="INFO">${delivery_date} = xpath://input[@name='deliveryDate']</msg>
+<status status="PASS" starttime="20220301 23:04:30.519" endtime="20220301 23:04:30.544"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${delivery_date}</arg>
 <arg>21022022</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:21.635" level="INFO">Typing text '21022022' into text field 'xpath://input[@name='deliveryDate']'.</msg>
-<status status="PASS" starttime="20220301 17:30:21.634" endtime="20220301 17:30:22.295"/>
+<msg timestamp="20220301 23:04:30.546" level="INFO">Typing text '21022022' into text field 'xpath://input[@name='deliveryDate']'.</msg>
+<status status="PASS" starttime="20220301 23:04:30.545" endtime="20220301 23:04:31.209"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:21.611" endtime="20220301 17:30:22.296"/>
+<status status="PASS" starttime="20220301 23:04:30.518" endtime="20220301 23:04:31.209"/>
 </kw>
 <kw name="Enter Delivery Note">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -319,25 +354,25 @@
 <arg>Locators</arg>
 <arg>${16}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:22.296" level="INFO">${delivery_note} = xpath://textarea[@placeholder='Enter Note']</msg>
-<status status="PASS" starttime="20220301 17:30:22.296" endtime="20220301 17:30:22.296"/>
+<msg timestamp="20220301 23:04:31.240" level="INFO">${delivery_note} = xpath://textarea[@placeholder='Enter Note']</msg>
+<status status="PASS" starttime="20220301 23:04:31.209" endtime="20220301 23:04:31.240"/>
 </kw>
 <kw name="Generate Random String" library="String">
 <var>${note_text}</var>
 <arg>8</arg>
 <arg>[LOWER][NUMBERS][UPPER]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20220301 17:30:22.296" level="INFO">${note_text} = DeNcZgqV</msg>
-<status status="PASS" starttime="20220301 17:30:22.296" endtime="20220301 17:30:22.296"/>
+<msg timestamp="20220301 23:04:31.240" level="INFO">${note_text} = GNVGAgTD</msg>
+<status status="PASS" starttime="20220301 23:04:31.240" endtime="20220301 23:04:31.240"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${delivery_note}</arg>
 <arg>${note_text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:22.296" level="INFO">Typing text 'DeNcZgqV' into text field 'xpath://textarea[@placeholder='Enter Note']'.</msg>
-<status status="PASS" starttime="20220301 17:30:22.296" endtime="20220301 17:30:23.053"/>
+<msg timestamp="20220301 23:04:31.240" level="INFO">Typing text 'GNVGAgTD' into text field 'xpath://textarea[@placeholder='Enter Note']'.</msg>
+<status status="PASS" starttime="20220301 23:04:31.240" endtime="20220301 23:04:32.025"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:22.296" endtime="20220301 17:30:23.054"/>
+<status status="PASS" starttime="20220301 23:04:31.209" endtime="20220301 23:04:32.026"/>
 </kw>
 <kw name="Enter Delivery Address">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -345,23 +380,31 @@
 <arg>Locators</arg>
 <arg>${17}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:23.072" level="INFO">${deliveri_address} = xpath://select[@name='deliveryAddress']</msg>
-<status status="PASS" starttime="20220301 17:30:23.056" endtime="20220301 17:30:23.072"/>
+<msg timestamp="20220301 23:04:32.049" level="INFO">${deliveri_address} = xpath://select[@name='deliveryAddress']</msg>
+<status status="PASS" starttime="20220301 23:04:32.027" endtime="20220301 23:04:32.049"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${select_delivery_address}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${7}</arg>
+<msg timestamp="20220301 23:04:32.069" level="INFO">${select_delivery_address} = Jalan Besar</msg>
+<status status="PASS" starttime="20220301 23:04:32.049" endtime="20220301 23:04:32.069"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${deliveri_address}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:23.073" level="INFO">Clicking element 'xpath://select[@name='deliveryAddress']'.</msg>
-<status status="PASS" starttime="20220301 17:30:23.072" endtime="20220301 17:30:23.415"/>
+<msg timestamp="20220301 23:04:32.070" level="INFO">Clicking element 'xpath://select[@name='deliveryAddress']'.</msg>
+<status status="PASS" starttime="20220301 23:04:32.070" endtime="20220301 23:04:32.386"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>${deliveri_address}</arg>
-<arg>Jalan Besar</arg>
+<arg>${select_delivery_address}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220301 17:30:23.416" level="INFO">Selecting options from selection list 'xpath://select[@name='deliveryAddress']' by label Jalan Besar.</msg>
-<status status="PASS" starttime="20220301 17:30:23.415" endtime="20220301 17:30:23.624"/>
+<msg timestamp="20220301 23:04:32.388" level="INFO">Selecting options from selection list 'xpath://select[@name='deliveryAddress']' by label Jalan Besar.</msg>
+<status status="PASS" starttime="20220301 23:04:32.387" endtime="20220301 23:04:32.611"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:23.055" endtime="20220301 17:30:23.624"/>
+<status status="PASS" starttime="20220301 23:04:32.026" endtime="20220301 23:04:32.612"/>
 </kw>
 <kw name="Click Add Manual Button">
 <kw name="Fetch Login Excel" library="fetchExcel">
@@ -369,44 +412,44 @@
 <arg>Locators</arg>
 <arg>${18}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:23.644" level="INFO">${add_manual} = xpath://span[text()='Add Manual']/..</msg>
-<status status="PASS" starttime="20220301 17:30:23.625" endtime="20220301 17:30:23.644"/>
+<msg timestamp="20220301 23:04:32.636" level="INFO">${add_manual} = xpath://span[text()='Add Manual']/..</msg>
+<status status="PASS" starttime="20220301 23:04:32.613" endtime="20220301 23:04:32.636"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${conversation}</var>
 <arg>Locators</arg>
 <arg>${19}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:23.663" level="INFO">${conversation} = xpath://h3[normalize-space()='Conversations']</msg>
-<status status="PASS" starttime="20220301 17:30:23.644" endtime="20220301 17:30:23.663"/>
+<msg timestamp="20220301 23:04:32.662" level="INFO">${conversation} = xpath://h3[normalize-space()='Conversations']</msg>
+<status status="PASS" starttime="20220301 23:04:32.636" endtime="20220301 23:04:32.663"/>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${conversation}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20220301 17:30:23.663" endtime="20220301 17:30:23.967"/>
+<status status="PASS" starttime="20220301 23:04:32.663" endtime="20220301 23:04:32.960"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${add_manual}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220301 17:30:23.967" endtime="20220301 17:30:24.009"/>
+<status status="PASS" starttime="20220301 23:04:32.960" endtime="20220301 23:04:32.998"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${add_manual}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220301 17:30:24.009" endtime="20220301 17:30:24.036"/>
+<status status="PASS" starttime="20220301 23:04:32.998" endtime="20220301 23:04:33.060"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${add_manual}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220301 17:30:24.036" endtime="20220301 17:30:24.046"/>
+<status status="PASS" starttime="20220301 23:04:33.060" endtime="20220301 23:04:33.098"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${add_manual}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:24.047" level="INFO">Clicking button 'xpath://span[text()='Add Manual']/..'.</msg>
-<status status="PASS" starttime="20220301 17:30:24.046" endtime="20220301 17:30:24.309"/>
+<msg timestamp="20220301 23:04:33.098" level="INFO">Clicking button 'xpath://span[text()='Add Manual']/..'.</msg>
+<status status="PASS" starttime="20220301 23:04:33.098" endtime="20220301 23:04:33.340"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:23.625" endtime="20220301 17:30:24.309"/>
+<status status="PASS" starttime="20220301 23:04:32.612" endtime="20220301 23:04:33.340"/>
 </kw>
 <kw name="Enter Manual Fields">
 <kw name="Generate Random String" library="String">
@@ -414,112 +457,200 @@
 <arg>12</arg>
 <arg>[LOWER][NUMBERS][UPPER]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20220301 17:30:24.320" level="INFO">${itemCode_text} = lBtRyfm1mh14</msg>
-<status status="PASS" starttime="20220301 17:30:24.320" endtime="20220301 17:30:24.320"/>
+<msg timestamp="20220301 23:04:33.342" level="INFO">${itemCode_text} = LZdD282pURRv</msg>
+<status status="PASS" starttime="20220301 23:04:33.342" endtime="20220301 23:04:33.342"/>
 </kw>
 <kw name="Generate Random String" library="String">
 <var>${itemName_text}</var>
 <arg>12</arg>
 <arg>[LOWER][NUMBERS][UPPER]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20220301 17:30:24.321" level="INFO">${itemName_text} = SCN1ynwVodUb</msg>
-<status status="PASS" starttime="20220301 17:30:24.321" endtime="20220301 17:30:24.321"/>
+<msg timestamp="20220301 23:04:33.343" level="INFO">${itemName_text} = OUzsH5S3HOOp</msg>
+<status status="PASS" starttime="20220301 23:04:33.343" endtime="20220301 23:04:33.343"/>
 </kw>
 <kw name="Generate Random String" library="String">
 <var>${itemDesc_text}</var>
 <arg>12</arg>
 <arg>[LOWER][NUMBERS][UPPER]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20220301 17:30:24.322" level="INFO">${itemDesc_text} = Akkk9CWBCbrB</msg>
-<status status="PASS" starttime="20220301 17:30:24.322" endtime="20220301 17:30:24.322"/>
+<msg timestamp="20220301 23:04:33.344" level="INFO">${itemDesc_text} = 4o2ixSOnUg3e</msg>
+<status status="PASS" starttime="20220301 23:04:33.344" endtime="20220301 23:04:33.344"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${itemMode_text}</var>
+<arg>12</arg>
+<arg>[LOWER][NUMBERS][UPPER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220301 23:04:33.345" level="INFO">${itemMode_text} = MRl74tZIxq0G</msg>
+<status status="PASS" starttime="20220301 23:04:33.345" endtime="20220301 23:04:33.345"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${itemBrand_text}</var>
+<arg>12</arg>
+<arg>[LOWER][NUMBERS][UPPER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220301 23:04:33.346" level="INFO">${itemBrand_text} = XLsAdcbsfd1v</msg>
+<status status="PASS" starttime="20220301 23:04:33.345" endtime="20220301 23:04:33.346"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${itemSize_text}</var>
+<arg>12</arg>
+<arg>[LOWER][NUMBERS][UPPER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220301 23:04:33.347" level="INFO">${itemSize_text} = 6nSNbpZ9Qeau</msg>
+<status status="PASS" starttime="20220301 23:04:33.347" endtime="20220301 23:04:33.347"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${note_text}</var>
+<arg>12</arg>
+<arg>[LOWER][NUMBERS][UPPER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220301 23:04:33.348" level="INFO">${note_text} = 7P6kSskAMqhO</msg>
+<status status="PASS" starttime="20220301 23:04:33.347" endtime="20220301 23:04:33.348"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${quantity_value}</var>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220301 23:04:33.348" level="INFO">${quantity_value} = 68</msg>
+<status status="PASS" starttime="20220301 23:04:33.348" endtime="20220301 23:04:33.348"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${itemcode}</var>
 <arg>Locators</arg>
 <arg>${20}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:24.344" level="INFO">${itemcode} = xpath:(//div[@col-id="itemCode"])[2]</msg>
-<status status="PASS" starttime="20220301 17:30:24.322" endtime="20220301 17:30:24.344"/>
+<msg timestamp="20220301 23:04:33.372" level="INFO">${itemcode} = xpath:(//div[@col-id="itemCode"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.348" endtime="20220301 23:04:33.373"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${itemName}</var>
 <arg>Locators</arg>
 <arg>${21}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:24.370" level="INFO">${itemName} = xpath:(//div[@col-id="itemName"])[2]</msg>
-<status status="PASS" starttime="20220301 17:30:24.344" endtime="20220301 17:30:24.370"/>
+<msg timestamp="20220301 23:04:33.400" level="INFO">${itemName} = xpath:(//div[@col-id="itemName"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.373" endtime="20220301 23:04:33.400"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${itemCategory}</var>
 <arg>Locators</arg>
 <arg>${22}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:24.391" level="INFO">${itemCategory} = xpath:(//div[@col-id="itemCategory"])[2]</msg>
-<status status="PASS" starttime="20220301 17:30:24.370" endtime="20220301 17:30:24.391"/>
+<msg timestamp="20220301 23:04:33.423" level="INFO">${itemCategory} = xpath:(//div[@col-id="itemCategory"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.401" endtime="20220301 23:04:33.423"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
-<var>${itemCategory_dropdown}</var>
+<var>${dropdown_list}</var>
 <arg>Locators</arg>
 <arg>${23}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:24.410" level="INFO">${itemCategory_dropdown} = xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..</msg>
-<status status="PASS" starttime="20220301 17:30:24.391" endtime="20220301 17:30:24.410"/>
+<msg timestamp="20220301 23:04:33.446" level="INFO">${dropdown_list} = xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..</msg>
+<status status="PASS" starttime="20220301 23:04:33.423" endtime="20220301 23:04:33.446"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${itemDescription}</var>
 <arg>Locators</arg>
 <arg>${24}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:24.432" level="INFO">${itemDescription} = xpath:(//div[@col-id="itemDescription"])[2]</msg>
-<status status="PASS" starttime="20220301 17:30:24.410" endtime="20220301 17:30:24.432"/>
+<msg timestamp="20220301 23:04:33.474" level="INFO">${itemDescription} = xpath:(//div[@col-id="itemDescription"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.447" endtime="20220301 23:04:33.474"/>
 </kw>
 <kw name="Fetch Login Excel" library="fetchExcel">
 <var>${add_item_white_space}</var>
 <arg>Locators</arg>
 <arg>${25}</arg>
 <arg>${2}</arg>
-<msg timestamp="20220301 17:30:24.450" level="INFO">${add_item_white_space} = xpath:(//div[@class="ag-center-cols-viewport"])[1]</msg>
-<status status="PASS" starttime="20220301 17:30:24.432" endtime="20220301 17:30:24.450"/>
+<msg timestamp="20220301 23:04:33.491" level="INFO">${add_item_white_space} = xpath:(//div[@class="ag-center-cols-viewport"])[1]</msg>
+<status status="PASS" starttime="20220301 23:04:33.474" endtime="20220301 23:04:33.491"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${itemMode}</var>
+<arg>Locators</arg>
+<arg>${26}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:33.508" level="INFO">${itemMode} = xpath:(//div[@col-id="itemModel"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.492" endtime="20220301 23:04:33.508"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${itemSize}</var>
+<arg>Locators</arg>
+<arg>${27}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:33.523" level="INFO">${itemSize} = xpath:(//div[@col-id="itemSize"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.508" endtime="20220301 23:04:33.523"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${itemBrand}</var>
+<arg>Locators</arg>
+<arg>${28}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:33.530" level="INFO">${itemBrand} = xpath:(//div[@col-id="itemBrand"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.523" endtime="20220301 23:04:33.530"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${uomCode}</var>
+<arg>Locators</arg>
+<arg>${29}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:33.545" level="INFO">${uomCode} = xpath:(//div[@col-id="uomCode"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.530" endtime="20220301 23:04:33.545"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${note}</var>
+<arg>Locators</arg>
+<arg>${30}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:33.561" level="INFO">${note} = xpath:(//div[@col-id="note"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.545" endtime="20220301 23:04:33.561"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${quantity}</var>
+<arg>Locators</arg>
+<arg>${36}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:33.576" level="INFO">${quantity} = (//div[@col-id="quantity"])[2]</msg>
+<status status="PASS" starttime="20220301 23:04:33.561" endtime="20220301 23:04:33.576"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${itemcode}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:24.451" level="INFO">Clicking element 'xpath:(//div[@col-id="itemCode"])[2]'.</msg>
-<status status="PASS" starttime="20220301 17:30:24.450" endtime="20220301 17:30:24.544"/>
+<msg timestamp="20220301 23:04:33.576" level="INFO">Clicking element 'xpath:(//div[@col-id="itemCode"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:33.576" endtime="20220301 23:04:33.662"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>None</arg>
 <arg>${itemCode_text}</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:24.546" level="INFO">Sending key(s) ('lBtRyfm1mh14',) to page.</msg>
-<msg timestamp="20220301 17:30:24.546" level="INFO">Sending keys lBtRyfm1mh14</msg>
-<status status="PASS" starttime="20220301 17:30:24.545" endtime="20220301 17:30:24.706"/>
+<msg timestamp="20220301 23:04:33.664" level="INFO">Sending key(s) ('LZdD282pURRv',) to page.</msg>
+<msg timestamp="20220301 23:04:33.664" level="INFO">Sending keys LZdD282pURRv</msg>
+<status status="PASS" starttime="20220301 23:04:33.662" endtime="20220301 23:04:33.817"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${itemName}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:24.706" level="INFO">Clicking element 'xpath:(//div[@col-id="itemName"])[2]'.</msg>
-<status status="PASS" starttime="20220301 17:30:24.706" endtime="20220301 17:30:24.799"/>
+<msg timestamp="20220301 23:04:33.818" level="INFO">Clicking element 'xpath:(//div[@col-id="itemName"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:33.817" endtime="20220301 23:04:33.901"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>None</arg>
 <arg>${itemName_text}</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:24.800" level="INFO">Sending key(s) ('SCN1ynwVodUb',) to page.</msg>
-<msg timestamp="20220301 17:30:24.801" level="INFO">Sending keys SCN1ynwVodUb</msg>
-<status status="PASS" starttime="20220301 17:30:24.799" endtime="20220301 17:30:24.911"/>
+<msg timestamp="20220301 23:04:33.902" level="INFO">Sending key(s) ('OUzsH5S3HOOp',) to page.</msg>
+<msg timestamp="20220301 23:04:33.902" level="INFO">Sending keys OUzsH5S3HOOp</msg>
+<status status="PASS" starttime="20220301 23:04:33.902" endtime="20220301 23:04:34.002"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${itemCategory}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:24.912" level="INFO">Clicking element 'xpath:(//div[@col-id="itemCategory"])[2]'.</msg>
-<status status="PASS" starttime="20220301 17:30:24.911" endtime="20220301 17:30:24.989"/>
+<msg timestamp="20220301 23:04:34.002" level="INFO">Clicking element 'xpath:(//div[@col-id="itemCategory"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:34.002" endtime="20220301 23:04:34.089"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${itemCategory_dropdown}</arg>
+<arg>${dropdown_list}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:24.990" level="INFO">Clicking element 'xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..'.</msg>
-<status status="PASS" starttime="20220301 17:30:24.989" endtime="20220301 17:30:25.130"/>
+<msg timestamp="20220301 23:04:34.090" level="INFO">Clicking element 'xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..'.</msg>
+<status status="PASS" starttime="20220301 23:04:34.089" endtime="20220301 23:04:34.234"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${category}</var>
@@ -528,37 +659,37 @@
 <arg>${151}</arg>
 <arg>${20}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20220301 17:30:25.132" level="INFO">${category} = [834, 499, 151, 20]</msg>
-<status status="PASS" starttime="20220301 17:30:25.130" endtime="20220301 17:30:25.132"/>
+<msg timestamp="20220301 23:04:34.238" level="INFO">${category} = [834, 499, 151, 20]</msg>
+<status status="PASS" starttime="20220301 23:04:34.234" endtime="20220301 23:04:34.238"/>
 </kw>
 <kw name="Click On Region" library="SikuliLibrary">
 <arg>${category}</arg>
 <doc>Click On Region
  there's no offset to be configured
  works with the keyword Get Extended Region From</doc>
-<msg timestamp="20220301 17:30:25.755" level="INFO">[log] CLICK on L[909,509]@S(0) (601 msec)</msg>
-<status status="PASS" starttime="20220301 17:30:25.133" endtime="20220301 17:30:25.756"/>
+<msg timestamp="20220301 23:04:34.883" level="INFO">[log] CLICK on L[909,509]@S(0) (613 msec)</msg>
+<status status="PASS" starttime="20220301 23:04:34.238" endtime="20220301 23:04:34.883"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${itemDescription}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:25.756" level="INFO">Clicking element 'xpath:(//div[@col-id="itemDescription"])[2]'.</msg>
-<status status="PASS" starttime="20220301 17:30:25.756" endtime="20220301 17:30:25.841"/>
+<msg timestamp="20220301 23:04:34.884" level="INFO">Clicking element 'xpath:(//div[@col-id="itemDescription"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:34.883" endtime="20220301 23:04:34.974"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>None</arg>
 <arg>${itemDesc_text}</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:25.843" level="INFO">Sending key(s) ('Akkk9CWBCbrB',) to page.</msg>
-<msg timestamp="20220301 17:30:25.843" level="INFO">Sending keys Akkk9CWBCbrB</msg>
-<status status="PASS" starttime="20220301 17:30:25.841" endtime="20220301 17:30:25.907"/>
+<msg timestamp="20220301 23:04:34.975" level="INFO">Sending key(s) ('4o2ixSOnUg3e',) to page.</msg>
+<msg timestamp="20220301 23:04:34.976" level="INFO">Sending keys 4o2ixSOnUg3e</msg>
+<status status="PASS" starttime="20220301 23:04:34.974" endtime="20220301 23:04:35.042"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${add_item_white_space}</arg>
 <arg>action_chain=True</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:30:25.908" level="INFO">Clicking 'xpath:(//div[@class="ag-center-cols-viewport"])[1]' using an action chain.</msg>
-<status status="PASS" starttime="20220301 17:30:25.907" endtime="20220301 17:30:26.209"/>
+<msg timestamp="20220301 23:04:35.043" level="INFO">Clicking 'xpath:(//div[@class="ag-center-cols-viewport"])[1]' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:04:35.043" endtime="20220301 23:04:35.345"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${i}</var>
@@ -569,12 +700,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.210" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.210" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.210" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.210" endtime="20220301 17:30:26.233"/>
+<msg timestamp="20220301 23:04:35.346" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.346" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.346" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.345" endtime="20220301 23:04:35.366"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.210" endtime="20220301 17:30:26.233"/>
+<status status="PASS" starttime="20220301 23:04:35.345" endtime="20220301 23:04:35.366"/>
 </iter>
 <iter>
 <var name="${i}">1</var>
@@ -582,12 +713,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.234" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.234" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.234" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.234" endtime="20220301 17:30:26.242"/>
+<msg timestamp="20220301 23:04:35.367" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.367" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.367" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.366" endtime="20220301 23:04:35.375"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.233" endtime="20220301 17:30:26.242"/>
+<status status="PASS" starttime="20220301 23:04:35.366" endtime="20220301 23:04:35.376"/>
 </iter>
 <iter>
 <var name="${i}">2</var>
@@ -595,12 +726,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.243" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.243" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.243" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.242" endtime="20220301 17:30:26.250"/>
+<msg timestamp="20220301 23:04:35.376" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.376" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.377" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.376" endtime="20220301 23:04:35.384"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.242" endtime="20220301 17:30:26.250"/>
+<status status="PASS" starttime="20220301 23:04:35.376" endtime="20220301 23:04:35.384"/>
 </iter>
 <iter>
 <var name="${i}">3</var>
@@ -608,12 +739,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.251" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.251" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.251" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.251" endtime="20220301 17:30:26.260"/>
+<msg timestamp="20220301 23:04:35.385" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.385" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.385" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.384" endtime="20220301 23:04:35.392"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.250" endtime="20220301 17:30:26.260"/>
+<status status="PASS" starttime="20220301 23:04:35.384" endtime="20220301 23:04:35.392"/>
 </iter>
 <iter>
 <var name="${i}">4</var>
@@ -621,12 +752,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.262" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.262" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.262" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.261" endtime="20220301 17:30:26.274"/>
+<msg timestamp="20220301 23:04:35.393" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.393" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.393" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.392" endtime="20220301 23:04:35.404"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.260" endtime="20220301 17:30:26.274"/>
+<status status="PASS" starttime="20220301 23:04:35.392" endtime="20220301 23:04:35.404"/>
 </iter>
 <iter>
 <var name="${i}">5</var>
@@ -634,12 +765,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.275" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.275" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.275" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.274" endtime="20220301 17:30:26.283"/>
+<msg timestamp="20220301 23:04:35.405" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.405" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.405" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.404" endtime="20220301 23:04:35.417"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.274" endtime="20220301 17:30:26.283"/>
+<status status="PASS" starttime="20220301 23:04:35.404" endtime="20220301 23:04:35.417"/>
 </iter>
 <iter>
 <var name="${i}">6</var>
@@ -647,12 +778,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.284" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.284" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.284" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.283" endtime="20220301 17:30:26.292"/>
+<msg timestamp="20220301 23:04:35.418" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.418" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.418" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.417" endtime="20220301 23:04:35.426"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.283" endtime="20220301 17:30:26.292"/>
+<status status="PASS" starttime="20220301 23:04:35.417" endtime="20220301 23:04:35.426"/>
 </iter>
 <iter>
 <var name="${i}">7</var>
@@ -660,12 +791,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.293" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.293" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.293" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.292" endtime="20220301 17:30:26.300"/>
+<msg timestamp="20220301 23:04:35.428" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.428" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.428" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.427" endtime="20220301 23:04:35.435"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.292" endtime="20220301 17:30:26.300"/>
+<status status="PASS" starttime="20220301 23:04:35.427" endtime="20220301 23:04:35.435"/>
 </iter>
 <iter>
 <var name="${i}">8</var>
@@ -673,12 +804,12 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.301" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.302" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.302" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.301" endtime="20220301 17:30:26.308"/>
+<msg timestamp="20220301 23:04:35.436" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.436" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.436" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.436" endtime="20220301 23:04:35.440"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.300" endtime="20220301 17:30:26.308"/>
+<status status="PASS" starttime="20220301 23:04:35.435" endtime="20220301 23:04:35.440"/>
 </iter>
 <iter>
 <var name="${i}">9</var>
@@ -686,29 +817,2093 @@
 <arg>None</arg>
 <arg>ARROW_RIGHT</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220301 17:30:26.308" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
-<msg timestamp="20220301 17:30:26.308" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
-<msg timestamp="20220301 17:30:26.308" level="INFO">Releasing special key ARROW_RIGHT.</msg>
-<status status="PASS" starttime="20220301 17:30:26.308" endtime="20220301 17:30:26.318"/>
+<msg timestamp="20220301 23:04:35.440" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:35.440" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:35.440" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:35.440" endtime="20220301 23:04:35.440"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:26.308" endtime="20220301 17:30:26.318"/>
+<status status="PASS" starttime="20220301 23:04:35.440" endtime="20220301 23:04:35.440"/>
 </iter>
-<status status="PASS" starttime="20220301 17:30:26.209" endtime="20220301 17:30:26.318"/>
+<status status="PASS" starttime="20220301 23:04:35.345" endtime="20220301 23:04:35.440"/>
 </for>
-<status status="PASS" starttime="20220301 17:30:24.319" endtime="20220301 17:30:26.319"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${itemMode}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:35.440" level="INFO">Clicking element 'xpath:(//div[@col-id="itemModel"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:35.440" endtime="20220301 23:04:35.580"/>
 </kw>
-<status status="PASS" starttime="20220301 17:30:06.638" endtime="20220301 17:30:26.319"/>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>${itemMode_text}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:35.582" level="INFO">Sending key(s) ('MRl74tZIxq0G',) to page.</msg>
+<msg timestamp="20220301 23:04:35.582" level="INFO">Sending keys MRl74tZIxq0G</msg>
+<status status="PASS" starttime="20220301 23:04:35.581" endtime="20220301 23:04:35.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${itemSize}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:35.717" level="INFO">Clicking element 'xpath:(//div[@col-id="itemSize"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:35.716" endtime="20220301 23:04:35.811"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>${itemSize_text}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:35.812" level="INFO">Sending key(s) ('6nSNbpZ9Qeau',) to page.</msg>
+<msg timestamp="20220301 23:04:35.813" level="INFO">Sending keys 6nSNbpZ9Qeau</msg>
+<status status="PASS" starttime="20220301 23:04:35.811" endtime="20220301 23:04:35.937"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${itemBrand}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:35.938" level="INFO">Clicking element 'xpath:(//div[@col-id="itemBrand"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:35.937" endtime="20220301 23:04:36.023"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>${itemBrand_text}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:36.023" level="INFO">Sending key(s) ('XLsAdcbsfd1v',) to page.</msg>
+<msg timestamp="20220301 23:04:36.023" level="INFO">Sending keys XLsAdcbsfd1v</msg>
+<status status="PASS" starttime="20220301 23:04:36.023" endtime="20220301 23:04:36.132"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${uomCode}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:36.132" level="INFO">Double clicking element 'xpath:(//div[@col-id="uomCode"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:36.132" endtime="20220301 23:04:36.869"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dropdown_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:36.870" level="INFO">Clicking element 'xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..'.</msg>
+<status status="PASS" starttime="20220301 23:04:36.869" endtime="20220301 23:04:36.965"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${uomCode_region}</var>
+<arg>${1284}</arg>
+<arg>${498}</arg>
+<arg>${110}</arg>
+<arg>${24}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220301 23:04:36.968" level="INFO">${uomCode_region} = [1284, 498, 110, 24]</msg>
+<status status="PASS" starttime="20220301 23:04:36.965" endtime="20220301 23:04:36.968"/>
+</kw>
+<kw name="Click On Region" library="SikuliLibrary">
+<arg>${uomCode_region}</arg>
+<doc>Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<msg timestamp="20220301 23:04:37.537" level="INFO">[log] CLICK on L[1339,510]@S(0) (563 msec)</msg>
+<status status="PASS" starttime="20220301 23:04:36.968" endtime="20220301 23:04:37.538"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_item_white_space}</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:37.539" level="INFO">Clicking 'xpath:(//div[@class="ag-center-cols-viewport"])[1]' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:04:37.538" endtime="20220301 23:04:37.849"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>10</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.850" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.850" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.850" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.850" endtime="20220301 23:04:37.872"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.849" endtime="20220301 23:04:37.872"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.873" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.873" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.873" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.872" endtime="20220301 23:04:37.881"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.872" endtime="20220301 23:04:37.881"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.882" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.882" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.882" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.881" endtime="20220301 23:04:37.889"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.881" endtime="20220301 23:04:37.889"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.890" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.890" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.890" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.889" endtime="20220301 23:04:37.904"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.889" endtime="20220301 23:04:37.904"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.905" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.905" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.905" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.904" endtime="20220301 23:04:37.916"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.904" endtime="20220301 23:04:37.916"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.918" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.918" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.918" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.917" endtime="20220301 23:04:37.927"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.916" endtime="20220301 23:04:37.927"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.928" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.928" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.929" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.927" endtime="20220301 23:04:37.944"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.927" endtime="20220301 23:04:37.944"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.946" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.946" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.946" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.945" endtime="20220301 23:04:37.955"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.944" endtime="20220301 23:04:37.955"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.956" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.956" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.956" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.956" endtime="20220301 23:04:37.974"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.955" endtime="20220301 23:04:37.974"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:37.975" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:04:37.975" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:04:37.975" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:04:37.974" endtime="20220301 23:04:37.986"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:37.974" endtime="20220301 23:04:37.986"/>
+</iter>
+<status status="PASS" starttime="20220301 23:04:37.849" endtime="20220301 23:04:37.986"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${note}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:37.987" level="INFO">Clicking element 'xpath:(//div[@col-id="note"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:37.986" endtime="20220301 23:04:38.221"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>${note_text}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:38.223" level="INFO">Sending key(s) ('7P6kSskAMqhO',) to page.</msg>
+<msg timestamp="20220301 23:04:38.223" level="INFO">Sending keys 7P6kSskAMqhO</msg>
+<status status="PASS" starttime="20220301 23:04:38.221" endtime="20220301 23:04:38.284"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${quantity}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:38.285" level="INFO">Clicking element '(//div[@col-id="quantity"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:04:38.284" endtime="20220301 23:04:38.390"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>${quantity_value}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:04:38.391" level="INFO">Sending key(s) ('68',) to page.</msg>
+<msg timestamp="20220301 23:04:38.391" level="INFO">Sending keys 68</msg>
+<status status="PASS" starttime="20220301 23:04:38.390" endtime="20220301 23:04:38.466"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:33.341" endtime="20220301 23:04:38.466"/>
+</kw>
+<kw name="Validate Internal Conversations">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${comment_box}</var>
+<arg>Locators</arg>
+<arg>${31}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:38.489" level="INFO">${comment_box} = //div[@class='mb-2 row']//input[@placeholder='Please enter your comment here...']</msg>
+<status status="PASS" starttime="20220301 23:04:38.467" endtime="20220301 23:04:38.489"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${send_button}</var>
+<arg>Locators</arg>
+<arg>${32}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:38.509" level="INFO">${send_button} = //div[@class='mb-2 row']//button[@type='button'][normalize-space()='Send']</msg>
+<status status="PASS" starttime="20220301 23:04:38.489" endtime="20220301 23:04:38.509"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${comment_text}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${8}</arg>
+<msg timestamp="20220301 23:04:38.526" level="INFO">${comment_text} = Just testing</msg>
+<status status="PASS" starttime="20220301 23:04:38.509" endtime="20220301 23:04:38.526"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${comment_box}</arg>
+<arg>${comment_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:38.527" level="INFO">Typing text 'Just testing' into text field '//div[@class='mb-2 row']//input[@placeholder='Please enter your comment here...']'.</msg>
+<status status="PASS" starttime="20220301 23:04:38.526" endtime="20220301 23:04:38.758"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${send_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:38.759" level="INFO">Clicking button '//div[@class='mb-2 row']//button[@type='button'][normalize-space()='Send']'.</msg>
+<status status="PASS" starttime="20220301 23:04:38.759" endtime="20220301 23:04:38.937"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:38.467" endtime="20220301 23:04:38.938"/>
+</kw>
+<kw name="Validate External Conversations">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${comment_box}</var>
+<arg>Locators</arg>
+<arg>${33}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:38.958" level="INFO">${comment_box} = //div[@class='mb-4 row']//input[@placeholder='Please enter your comment here...']</msg>
+<status status="PASS" starttime="20220301 23:04:38.939" endtime="20220301 23:04:38.958"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${send_button}</var>
+<arg>Locators</arg>
+<arg>${34}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:38.980" level="INFO">${send_button} = //div[@class='mb-4 row']//button[@type='button'][normalize-space()='Send']</msg>
+<status status="PASS" starttime="20220301 23:04:38.958" endtime="20220301 23:04:38.980"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${comment_text}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${8}</arg>
+<msg timestamp="20220301 23:04:38.999" level="INFO">${comment_text} = Just testing</msg>
+<status status="PASS" starttime="20220301 23:04:38.980" endtime="20220301 23:04:38.999"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${comment_box}</arg>
+<arg>${comment_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:39.000" level="INFO">Typing text 'Just testing' into text field '//div[@class='mb-4 row']//input[@placeholder='Please enter your comment here...']'.</msg>
+<status status="PASS" starttime="20220301 23:04:38.999" endtime="20220301 23:04:39.215"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${send_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:39.216" level="INFO">Clicking button '//div[@class='mb-4 row']//button[@type='button'][normalize-space()='Send']'.</msg>
+<status status="PASS" starttime="20220301 23:04:39.215" endtime="20220301 23:04:39.456"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:38.939" endtime="20220301 23:04:39.456"/>
+</kw>
+<kw name="Click PPR Raise Submit Button">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${submit_button}</var>
+<arg>Locators</arg>
+<arg>${35}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:39.484" level="INFO">${submit_button} = //button[@class='mr-3 btn btn-primary']</msg>
+<status status="PASS" starttime="20220301 23:04:39.458" endtime="20220301 23:04:39.484"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submit_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:39.484" level="INFO">Clicking button '//button[@class='mr-3 btn btn-primary']'.</msg>
+<status status="PASS" starttime="20220301 23:04:39.484" endtime="20220301 23:04:39.693"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:39.457" endtime="20220301 23:04:39.694"/>
+</kw>
+<kw name="Verify PPR">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Purchase_Pre_Requisitions_List_Header}</var>
+<arg>Locators</arg>
+<arg>${37}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:39.723" level="INFO">${Purchase_Pre_Requisitions_List_Header} = xpath://h1[@class='display-5 mr-3 mb-0 align-self-start']//span[contains(text(),'Purchase Pre-Requisitions List')]</msg>
+<status status="PASS" starttime="20220301 23:04:39.696" endtime="20220301 23:04:39.723"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Purchase_Pre_Requisitions_List_Header}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:04:39.723" endtime="20220301 23:04:40.685"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:39.695" endtime="20220301 23:04:40.685"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220301 23:04:45.696" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220301 23:04:40.686" endtime="20220301 23:04:45.696"/>
+</kw>
+<kw name="Click Logout">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${logout_btn}</var>
+<arg>Locators</arg>
+<arg>${5}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:45.734" level="INFO">${logout_btn} = xpath://i[@class='fa fa-power-off']</msg>
+<status status="PASS" starttime="20220301 23:04:45.698" endtime="20220301 23:04:45.734"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout_btn}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:04:45.734" endtime="20220301 23:04:45.754"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:45.755" level="INFO">Clicking element 'xpath://i[@class='fa fa-power-off']'.</msg>
+<status status="PASS" starttime="20220301 23:04:45.754" endtime="20220301 23:04:46.575"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:45.697" endtime="20220301 23:04:46.575"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:13.519" endtime="20220301 23:04:46.576"/>
 </test>
-<status status="PASS" starttime="20220301 17:29:56.360" endtime="20220301 17:30:26.320"/>
+<test id="s1-t2" name="Approve PPR">
+<kw name="Enter Chris username">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${username_loc}</var>
+<arg>Locators</arg>
+<arg>${2}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:46.610" level="INFO">${username_loc} = xpath://input[@id='email']</msg>
+<status status="PASS" starttime="20220301 23:04:46.582" endtime="20220301 23:04:46.610"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${chris_username}</var>
+<arg>TestData</arg>
+<arg>${3}</arg>
+<arg>${1}</arg>
+<msg timestamp="20220301 23:04:46.629" level="INFO">${chris_username} = chris.p2papp@getnada.com</msg>
+<status status="PASS" starttime="20220301 23:04:46.611" endtime="20220301 23:04:46.629"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${password_loc}</var>
+<arg>Locators</arg>
+<arg>${3}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:46.652" level="INFO">${password_loc} = xpath://input[@id='password']</msg>
+<status status="PASS" starttime="20220301 23:04:46.631" endtime="20220301 23:04:46.652"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${password}</var>
+<arg>TestData</arg>
+<arg>${3}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:46.670" level="INFO">${password} = P@ss2022</msg>
+<status status="PASS" starttime="20220301 23:04:46.652" endtime="20220301 23:04:46.670"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_loc}</arg>
+<arg>${chris_username}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:46.671" level="INFO">Typing text 'chris.p2papp@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220301 23:04:46.671" endtime="20220301 23:04:46.821"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:46.822" level="INFO">Typing text 'P@ss2022' into text field 'xpath://input[@id='password']'.</msg>
+<status status="PASS" starttime="20220301 23:04:46.821" endtime="20220301 23:04:46.965"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:46.581" endtime="20220301 23:04:46.965"/>
+</kw>
+<kw name="Click Login Button">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${submit_loc}</var>
+<arg>Locators</arg>
+<arg>${4}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:46.986" level="INFO">${submit_loc} = xpath://button[text()='Login']</msg>
+<status status="PASS" starttime="20220301 23:04:46.966" endtime="20220301 23:04:46.987"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${submit_loc}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:04:46.987" endtime="20220301 23:04:47.008"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submit_loc}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:47.009" level="INFO">Clicking button 'xpath://button[text()='Login']'.</msg>
+<status status="PASS" starttime="20220301 23:04:47.008" endtime="20220301 23:04:50.004"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:46.965" endtime="20220301 23:04:50.004"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:04:50.005" endtime="20220301 23:04:50.919"/>
+</kw>
+<kw name="Click Requisition Tab">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${requisition_tab}</var>
+<arg>Locators</arg>
+<arg>${6}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:50.953" level="INFO">${requisition_tab} = xpath://div[normalize-space()='Requisitions']</msg>
+<status status="PASS" starttime="20220301 23:04:50.921" endtime="20220301 23:04:50.953"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${requisition_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:50.954" level="INFO">Clicking element 'xpath://div[normalize-space()='Requisitions']'.</msg>
+<status status="PASS" starttime="20220301 23:04:50.954" endtime="20220301 23:04:51.627"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:50.920" endtime="20220301 23:04:51.627"/>
+</kw>
+<kw name="Click Pre Purchase Requisition Tab">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${requisition_tab}</var>
+<arg>Locators</arg>
+<arg>${7}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:51.664" level="INFO">${requisition_tab} = xpath://span[normalize-space()='Pre Purchase Requisition']</msg>
+<status status="PASS" starttime="20220301 23:04:51.630" endtime="20220301 23:04:51.664"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${requisition_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:51.665" level="INFO">Clicking element 'xpath://span[normalize-space()='Pre Purchase Requisition']'.</msg>
+<status status="PASS" starttime="20220301 23:04:51.664" endtime="20220301 23:04:51.750"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:51.629" endtime="20220301 23:04:51.751"/>
+</kw>
+<kw name="Click Purchase Pre-Requisitions List">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Purchase_Pre_Requisitions_List}</var>
+<arg>Locators</arg>
+<arg>${38}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:51.774" level="INFO">${Purchase_Pre_Requisitions_List} = xpath://a[@class='sidebar-submenu__entry__link']//span[contains(text(),'Purchase Pre-Requisitions List')]</msg>
+<status status="PASS" starttime="20220301 23:04:51.752" endtime="20220301 23:04:51.774"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Purchase_Pre_Requisitions_List}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:51.775" level="INFO">Clicking element 'xpath://a[@class='sidebar-submenu__entry__link']//span[contains(text(),'Purchase Pre-Requisitions List')]'.</msg>
+<status status="PASS" starttime="20220301 23:04:51.774" endtime="20220301 23:04:52.097"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:51.752" endtime="20220301 23:04:52.097"/>
+</kw>
+<kw name="Select first List">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Pre_Requisitions_first_List}</var>
+<arg>Locators</arg>
+<arg>${39}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:52.128" level="INFO">${Pre_Requisitions_first_List} = xpath:(//div[@ref="eViewport"])[1]/div/div[1]</msg>
+<status status="PASS" starttime="20220301 23:04:52.101" endtime="20220301 23:04:52.128"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${Pre_Requisitions_first_List}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:52.129" level="INFO">Double clicking element 'xpath:(//div[@ref="eViewport"])[1]/div/div[1]'.</msg>
+<status status="PASS" starttime="20220301 23:04:52.129" endtime="20220301 23:04:53.153"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:52.100" endtime="20220301 23:04:53.153"/>
+</kw>
+<kw name="Scroll down to Audit Trail">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Audit_trail}</var>
+<arg>Locators</arg>
+<arg>${40}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:53.203" level="INFO">${Audit_trail} = xpath://p[text()='Audit Trail']</msg>
+<status status="PASS" starttime="20220301 23:04:53.175" endtime="20220301 23:04:53.203"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Audit_trail}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220301 23:04:53.204" endtime="20220301 23:04:54.357"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:53.174" endtime="20220301 23:04:54.358"/>
+</kw>
+<kw name="Click Approve Button">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Approve_button}</var>
+<arg>Locators</arg>
+<arg>${41}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:54.395" level="INFO">${Approve_button} = xpath://button[@label="Approve"]</msg>
+<status status="PASS" starttime="20220301 23:04:54.360" endtime="20220301 23:04:54.395"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Approve_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220301 23:04:54.487" level="INFO">Element 'xpath://button[@label="Approve"]' is displayed.</msg>
+<status status="PASS" starttime="20220301 23:04:54.395" endtime="20220301 23:04:54.487"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Approve_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:54.488" level="INFO">Clicking button 'xpath://button[@label="Approve"]'.</msg>
+<status status="PASS" starttime="20220301 23:04:54.487" endtime="20220301 23:04:54.615"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:54.359" endtime="20220301 23:04:54.615"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220301 23:04:59.631" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220301 23:04:54.616" endtime="20220301 23:04:59.631"/>
+</kw>
+<kw name="Click Logout">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${logout_btn}</var>
+<arg>Locators</arg>
+<arg>${5}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:04:59.646" level="INFO">${logout_btn} = xpath://i[@class='fa fa-power-off']</msg>
+<status status="PASS" starttime="20220301 23:04:59.631" endtime="20220301 23:04:59.646"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout_btn}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:04:59.646" endtime="20220301 23:04:59.662"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:04:59.662" level="INFO">Clicking element 'xpath://i[@class='fa fa-power-off']'.</msg>
+<status status="PASS" starttime="20220301 23:04:59.662" endtime="20220301 23:05:00.923"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:59.631" endtime="20220301 23:05:00.924"/>
+</kw>
+<status status="PASS" starttime="20220301 23:04:46.580" endtime="20220301 23:05:00.926"/>
+</test>
+<test id="s1-t3" name="Convert to PR">
+<kw name="Enter Marilyn username">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${username_loc}</var>
+<arg>Locators</arg>
+<arg>${2}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:00.955" level="INFO">${username_loc} = xpath://input[@id='email']</msg>
+<status status="PASS" starttime="20220301 23:05:00.931" endtime="20220301 23:05:00.955"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${marilyn_username}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${1}</arg>
+<msg timestamp="20220301 23:05:00.974" level="INFO">${marilyn_username} = marilyn.f@getnada.com</msg>
+<status status="PASS" starttime="20220301 23:05:00.956" endtime="20220301 23:05:00.974"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${password_loc}</var>
+<arg>Locators</arg>
+<arg>${3}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:00.992" level="INFO">${password_loc} = xpath://input[@id='password']</msg>
+<status status="PASS" starttime="20220301 23:05:00.975" endtime="20220301 23:05:00.992"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${password}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:01.002" level="INFO">${password} = P@ss2022</msg>
+<status status="PASS" starttime="20220301 23:05:00.992" endtime="20220301 23:05:01.002"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_loc}</arg>
+<arg>${marilyn_username}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:01.002" level="INFO">Typing text 'marilyn.f@getnada.com' into text field 'xpath://input[@id='email']'.</msg>
+<status status="PASS" starttime="20220301 23:05:01.002" endtime="20220301 23:05:01.146"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:01.147" level="INFO">Typing text 'P@ss2022' into text field 'xpath://input[@id='password']'.</msg>
+<status status="PASS" starttime="20220301 23:05:01.147" endtime="20220301 23:05:01.267"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:00.930" endtime="20220301 23:05:01.267"/>
+</kw>
+<kw name="Click Login Button">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${submit_loc}</var>
+<arg>Locators</arg>
+<arg>${4}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:01.286" level="INFO">${submit_loc} = xpath://button[text()='Login']</msg>
+<status status="PASS" starttime="20220301 23:05:01.268" endtime="20220301 23:05:01.286"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${submit_loc}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:05:01.286" endtime="20220301 23:05:01.302"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submit_loc}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:01.303" level="INFO">Clicking button 'xpath://button[text()='Login']'.</msg>
+<status status="PASS" starttime="20220301 23:05:01.303" endtime="20220301 23:05:02.425"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:01.268" endtime="20220301 23:05:02.426"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 23:05:02.427" endtime="20220301 23:05:03.241"/>
+</kw>
+<kw name="Click Requisition Tab">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${requisition_tab}</var>
+<arg>Locators</arg>
+<arg>${6}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:03.272" level="INFO">${requisition_tab} = xpath://div[normalize-space()='Requisitions']</msg>
+<status status="PASS" starttime="20220301 23:05:03.244" endtime="20220301 23:05:03.272"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${requisition_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:03.273" level="INFO">Clicking element 'xpath://div[normalize-space()='Requisitions']'.</msg>
+<status status="PASS" starttime="20220301 23:05:03.272" endtime="20220301 23:05:03.884"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:03.243" endtime="20220301 23:05:03.885"/>
+</kw>
+<kw name="Click Pre Purchase Requisition Tab">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${requisition_tab}</var>
+<arg>Locators</arg>
+<arg>${7}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:03.949" level="INFO">${requisition_tab} = xpath://span[normalize-space()='Pre Purchase Requisition']</msg>
+<status status="PASS" starttime="20220301 23:05:03.917" endtime="20220301 23:05:03.949"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${requisition_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:03.950" level="INFO">Clicking element 'xpath://span[normalize-space()='Pre Purchase Requisition']'.</msg>
+<status status="PASS" starttime="20220301 23:05:03.949" endtime="20220301 23:05:04.029"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:03.916" endtime="20220301 23:05:04.030"/>
+</kw>
+<kw name="Click Purchase Pre-Requisitions List">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Purchase_Pre_Requisitions_List}</var>
+<arg>Locators</arg>
+<arg>${38}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:04.052" level="INFO">${Purchase_Pre_Requisitions_List} = xpath://a[@class='sidebar-submenu__entry__link']//span[contains(text(),'Purchase Pre-Requisitions List')]</msg>
+<status status="PASS" starttime="20220301 23:05:04.031" endtime="20220301 23:05:04.052"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Purchase_Pre_Requisitions_List}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:04.053" level="INFO">Clicking element 'xpath://a[@class='sidebar-submenu__entry__link']//span[contains(text(),'Purchase Pre-Requisitions List')]'.</msg>
+<status status="PASS" starttime="20220301 23:05:04.053" endtime="20220301 23:05:04.345"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:04.030" endtime="20220301 23:05:04.345"/>
+</kw>
+<kw name="Select first List">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Pre_Requisitions_first_List}</var>
+<arg>Locators</arg>
+<arg>${39}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:04.381" level="INFO">${Pre_Requisitions_first_List} = xpath:(//div[@ref="eViewport"])[1]/div/div[1]</msg>
+<status status="PASS" starttime="20220301 23:05:04.347" endtime="20220301 23:05:04.382"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${Pre_Requisitions_first_List}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:04.382" level="INFO">Double clicking element 'xpath:(//div[@ref="eViewport"])[1]/div/div[1]'.</msg>
+<status status="PASS" starttime="20220301 23:05:04.382" endtime="20220301 23:05:05.093"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:04.346" endtime="20220301 23:05:05.094"/>
+</kw>
+<kw name="Scroll down to Audit Trail">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Audit_trail}</var>
+<arg>Locators</arg>
+<arg>${40}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:05.130" level="INFO">${Audit_trail} = xpath://p[text()='Audit Trail']</msg>
+<status status="PASS" starttime="20220301 23:05:05.100" endtime="20220301 23:05:05.130"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Audit_trail}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220301 23:05:05.130" endtime="20220301 23:05:06.291"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:05.100" endtime="20220301 23:05:06.291"/>
+</kw>
+<kw name="Click Convert to Request">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${convert_to_request_button}</var>
+<arg>Locators</arg>
+<arg>${42}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:06.309" level="INFO">${convert_to_request_button} = xpath://button[normalize-space()='Convert To Request']</msg>
+<status status="PASS" starttime="20220301 23:05:06.291" endtime="20220301 23:05:06.309"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${convert_to_request_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220301 23:05:06.340" level="INFO">Element 'xpath://button[normalize-space()='Convert To Request']' is displayed.</msg>
+<status status="PASS" starttime="20220301 23:05:06.309" endtime="20220301 23:05:06.340"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${convert_to_request_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:06.340" level="INFO">Clicking button 'xpath://button[normalize-space()='Convert To Request']'.</msg>
+<status status="PASS" starttime="20220301 23:05:06.340" endtime="20220301 23:05:06.529"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:06.291" endtime="20220301 23:05:06.529"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220301 23:05:11.534" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220301 23:05:06.530" endtime="20220301 23:05:11.534"/>
+</kw>
+<kw name="Select first List">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${Pre_Requisitions_first_List}</var>
+<arg>Locators</arg>
+<arg>${39}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:11.540" level="INFO">${Pre_Requisitions_first_List} = xpath:(//div[@ref="eViewport"])[1]/div/div[1]</msg>
+<status status="PASS" starttime="20220301 23:05:11.534" endtime="20220301 23:05:11.540"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${Pre_Requisitions_first_List}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:11.540" level="INFO">Double clicking element 'xpath:(//div[@ref="eViewport"])[1]/div/div[1]'.</msg>
+<status status="PASS" starttime="20220301 23:05:11.540" endtime="20220301 23:05:12.264"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:11.534" endtime="20220301 23:05:12.265"/>
+</kw>
+<kw name="Submit Purchase Request Details">
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${clear_all}</var>
+<arg>Locators</arg>
+<arg>${43}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.299" level="INFO">${clear_all} = xpath://button[text()='Clear All']</msg>
+<status status="PASS" starttime="20220301 23:05:12.267" endtime="20220301 23:05:12.299"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${supplier_code}</var>
+<arg>Locators</arg>
+<arg>${44}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.319" level="INFO">${supplier_code} = xpath://div[text()='Please select a supplier']</msg>
+<status status="PASS" starttime="20220301 23:05:12.299" endtime="20220301 23:05:12.319"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${supplier_code_list_box}</var>
+<arg>Locators</arg>
+<arg>${45}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.348" level="INFO">${supplier_code_list_box} = xpath://ul[@role="listbox"]</msg>
+<status status="PASS" starttime="20220301 23:05:12.319" endtime="20220301 23:05:12.348"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${ss0001}</var>
+<arg>Locators</arg>
+<arg>${46}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.413" level="INFO">${ss0001} = xpath://li[text()='SS0001']</msg>
+<status status="PASS" starttime="20220301 23:05:12.348" endtime="20220301 23:05:12.413"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${submit_Btn}</var>
+<arg>Locators</arg>
+<arg>${47}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.489" level="INFO">${submit_Btn} = xpath://button[normalize-space()='Submit']</msg>
+<status status="PASS" starttime="20220301 23:05:12.413" endtime="20220301 23:05:12.489"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${approval_route}</var>
+<arg>Locators</arg>
+<arg>${48}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.526" level="INFO">${approval_route} = xpath://select[@name='approvalRouteUuid']</msg>
+<status status="PASS" starttime="20220301 23:05:12.490" endtime="20220301 23:05:12.526"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${select_approval_route}</var>
+<arg>TestData</arg>
+<arg>${2}</arg>
+<arg>${9}</arg>
+<msg timestamp="20220301 23:05:12.545" level="INFO">${select_approval_route} = PR approval</msg>
+<status status="PASS" starttime="20220301 23:05:12.526" endtime="20220301 23:05:12.545"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${conversation}</var>
+<arg>Locators</arg>
+<arg>${19}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.564" level="INFO">${conversation} = xpath://h3[normalize-space()='Conversations']</msg>
+<status status="PASS" starttime="20220301 23:05:12.545" endtime="20220301 23:05:12.564"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${add_item_white_space}</var>
+<arg>Locators</arg>
+<arg>${25}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.582" level="INFO">${add_item_white_space} = xpath:(//div[@class="ag-center-cols-viewport"])[1]</msg>
+<status status="PASS" starttime="20220301 23:05:12.564" endtime="20220301 23:05:12.582"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${taxCode}</var>
+<arg>Locators</arg>
+<arg>${49}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.602" level="INFO">${taxCode} = (//div[@col-id="taxCode"])[2]</msg>
+<status status="PASS" starttime="20220301 23:05:12.582" endtime="20220301 23:05:12.602"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${dropdown_list}</var>
+<arg>Locators</arg>
+<arg>${23}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.635" level="INFO">${dropdown_list} = xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..</msg>
+<status status="PASS" starttime="20220301 23:05:12.602" endtime="20220301 23:05:12.635"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${currency}</var>
+<arg>Locators</arg>
+<arg>${50}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.660" level="INFO">${currency} = (//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]</msg>
+<status status="PASS" starttime="20220301 23:05:12.635" endtime="20220301 23:05:12.660"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${currency_opt}</var>
+<arg>Locators</arg>
+<arg>${51}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.685" level="INFO">${currency_opt} = //div[@class=" css-g1d714-ValueContainer"]</msg>
+<status status="PASS" starttime="20220301 23:05:12.660" endtime="20220301 23:05:12.685"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${supplier_uid}</var>
+<arg>Locators</arg>
+<arg>${52}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.711" level="INFO">${supplier_uid} = xpath:(//div[@col-id="supplierUuid"])[2]</msg>
+<status status="PASS" starttime="20220301 23:05:12.685" endtime="20220301 23:05:12.711"/>
+</kw>
+<kw name="Fetch Login Excel" library="fetchExcel">
+<var>${submit_button}</var>
+<arg>Locators</arg>
+<arg>${53}</arg>
+<arg>${2}</arg>
+<msg timestamp="20220301 23:05:12.733" level="INFO">${submit_button} = xpath://button[text()='Submit']</msg>
+<status status="PASS" starttime="20220301 23:05:12.712" endtime="20220301 23:05:12.733"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${submit_Btn}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 23:05:12.733" endtime="20220301 23:05:12.864"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${submit_Btn}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220301 23:05:12.865" endtime="20220301 23:05:18.001"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${approval_route}</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:18.002" level="INFO">Clicking 'xpath://select[@name='approvalRouteUuid']' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:05:18.001" endtime="20220301 23:05:18.411"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${approval_route}</arg>
+<arg>${select_approval_route}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220301 23:05:18.413" level="INFO">Selecting options from selection list 'xpath://select[@name='approvalRouteUuid']' by label PR approval.</msg>
+<status status="PASS" starttime="20220301 23:05:18.412" endtime="20220301 23:05:18.683"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${clear_all}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:18.684" level="INFO">Clicking button 'xpath://button[text()='Clear All']'.</msg>
+<status status="PASS" starttime="20220301 23:05:18.683" endtime="20220301 23:05:18.971"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${supplier_code}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:18.972" level="INFO">Clicking element 'xpath://div[text()='Please select a supplier']'.</msg>
+<status status="PASS" starttime="20220301 23:05:18.971" endtime="20220301 23:05:19.141"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${supplier_code_list_box}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 23:05:19.141" endtime="20220301 23:05:19.172"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ss0001}</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:19.172" level="INFO">Clicking 'xpath://li[text()='SS0001']' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:05:19.172" endtime="20220301 23:05:19.657"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ESCAPE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:19.658" level="INFO">Sending key(s) ('ESCAPE',) to page.</msg>
+<msg timestamp="20220301 23:05:19.658" level="INFO">Pressing special key ESCAPE to browser.</msg>
+<msg timestamp="20220301 23:05:19.658" level="INFO">Releasing special key ESCAPE.</msg>
+<status status="PASS" starttime="20220301 23:05:19.657" endtime="20220301 23:05:19.739"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${conversation}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220301 23:05:19.739" endtime="20220301 23:05:20.068"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${add_item_white_space}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:20.069" level="INFO">Double clicking element 'xpath:(//div[@class="ag-center-cols-viewport"])[1]'.</msg>
+<status status="PASS" starttime="20220301 23:05:20.069" endtime="20220301 23:05:20.505"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>50</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.507" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.507" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.507" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.506" endtime="20220301 23:05:20.555"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.506" endtime="20220301 23:05:20.555"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.556" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.556" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.556" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.556" endtime="20220301 23:05:20.564"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.555" endtime="20220301 23:05:20.564"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.565" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.565" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.565" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.564" endtime="20220301 23:05:20.571"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.564" endtime="20220301 23:05:20.571"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.573" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.573" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.573" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.572" endtime="20220301 23:05:20.582"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.572" endtime="20220301 23:05:20.582"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.583" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.583" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.583" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.582" endtime="20220301 23:05:20.597"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.582" endtime="20220301 23:05:20.597"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.598" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.598" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.598" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.598" endtime="20220301 23:05:20.606"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.598" endtime="20220301 23:05:20.606"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.608" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.608" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.608" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.607" endtime="20220301 23:05:20.617"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.606" endtime="20220301 23:05:20.617"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.618" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.618" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.618" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.617" endtime="20220301 23:05:20.633"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.617" endtime="20220301 23:05:20.633"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.634" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.634" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.634" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.634" endtime="20220301 23:05:20.646"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.633" endtime="20220301 23:05:20.646"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.647" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.647" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.647" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.646" endtime="20220301 23:05:20.654"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.646" endtime="20220301 23:05:20.654"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.656" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.656" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.656" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.655" endtime="20220301 23:05:20.666"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.655" endtime="20220301 23:05:20.666"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.667" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.667" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.667" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.666" endtime="20220301 23:05:20.677"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.666" endtime="20220301 23:05:20.678"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.679" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.679" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.679" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.678" endtime="20220301 23:05:20.686"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.678" endtime="20220301 23:05:20.686"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.687" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.687" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.687" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.687" endtime="20220301 23:05:20.704"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.687" endtime="20220301 23:05:20.704"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.704" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.705" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.705" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.704" endtime="20220301 23:05:20.716"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.704" endtime="20220301 23:05:20.716"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.717" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.717" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.717" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.716" endtime="20220301 23:05:20.728"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.716" endtime="20220301 23:05:20.728"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.729" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.729" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.729" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.728" endtime="20220301 23:05:20.737"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.728" endtime="20220301 23:05:20.737"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.738" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.738" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.738" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.737" endtime="20220301 23:05:20.763"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.737" endtime="20220301 23:05:20.763"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.764" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.764" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.764" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.764" endtime="20220301 23:05:20.771"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.763" endtime="20220301 23:05:20.771"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.773" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.773" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.773" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.772" endtime="20220301 23:05:20.781"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.771" endtime="20220301 23:05:20.782"/>
+</iter>
+<iter>
+<var name="${i}">20</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.782" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.782" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.783" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.782" endtime="20220301 23:05:20.797"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.782" endtime="20220301 23:05:20.797"/>
+</iter>
+<iter>
+<var name="${i}">21</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.798" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.798" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.798" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.797" endtime="20220301 23:05:20.805"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.797" endtime="20220301 23:05:20.805"/>
+</iter>
+<iter>
+<var name="${i}">22</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.806" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.807" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.807" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.806" endtime="20220301 23:05:20.819"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.805" endtime="20220301 23:05:20.819"/>
+</iter>
+<iter>
+<var name="${i}">23</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.820" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.820" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.820" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.819" endtime="20220301 23:05:20.831"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.819" endtime="20220301 23:05:20.831"/>
+</iter>
+<iter>
+<var name="${i}">24</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.832" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.832" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.832" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.831" endtime="20220301 23:05:20.839"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.831" endtime="20220301 23:05:20.839"/>
+</iter>
+<iter>
+<var name="${i}">25</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.840" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.840" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.841" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.840" endtime="20220301 23:05:20.849"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.839" endtime="20220301 23:05:20.849"/>
+</iter>
+<iter>
+<var name="${i}">26</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.849" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.850" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.850" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.849" endtime="20220301 23:05:20.868"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.849" endtime="20220301 23:05:20.868"/>
+</iter>
+<iter>
+<var name="${i}">27</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.869" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.869" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.870" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.869" endtime="20220301 23:05:20.880"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.868" endtime="20220301 23:05:20.880"/>
+</iter>
+<iter>
+<var name="${i}">28</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.881" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.881" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.881" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.880" endtime="20220301 23:05:20.888"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.880" endtime="20220301 23:05:20.888"/>
+</iter>
+<iter>
+<var name="${i}">29</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.889" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.889" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.890" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.888" endtime="20220301 23:05:20.898"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.888" endtime="20220301 23:05:20.898"/>
+</iter>
+<iter>
+<var name="${i}">30</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.899" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.899" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.899" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.898" endtime="20220301 23:05:20.906"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.898" endtime="20220301 23:05:20.906"/>
+</iter>
+<iter>
+<var name="${i}">31</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.907" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.907" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.907" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.906" endtime="20220301 23:05:20.915"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.906" endtime="20220301 23:05:20.915"/>
+</iter>
+<iter>
+<var name="${i}">32</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.916" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.916" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.916" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.915" endtime="20220301 23:05:20.923"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.915" endtime="20220301 23:05:20.923"/>
+</iter>
+<iter>
+<var name="${i}">33</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.924" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.924" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.924" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.924" endtime="20220301 23:05:20.946"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.923" endtime="20220301 23:05:20.946"/>
+</iter>
+<iter>
+<var name="${i}">34</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.947" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.947" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.947" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.946" endtime="20220301 23:05:20.953"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.946" endtime="20220301 23:05:20.953"/>
+</iter>
+<iter>
+<var name="${i}">35</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.954" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.954" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.954" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.954" endtime="20220301 23:05:20.965"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.953" endtime="20220301 23:05:20.965"/>
+</iter>
+<iter>
+<var name="${i}">36</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.965" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.966" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.966" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.965" endtime="20220301 23:05:20.973"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.965" endtime="20220301 23:05:20.973"/>
+</iter>
+<iter>
+<var name="${i}">37</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.974" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.974" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.974" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.973" endtime="20220301 23:05:20.987"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.973" endtime="20220301 23:05:20.987"/>
+</iter>
+<iter>
+<var name="${i}">38</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:20.989" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:20.989" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:20.989" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:20.988" endtime="20220301 23:05:21.003"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:20.988" endtime="20220301 23:05:21.003"/>
+</iter>
+<iter>
+<var name="${i}">39</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.004" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.004" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.004" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.003" endtime="20220301 23:05:21.013"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.003" endtime="20220301 23:05:21.013"/>
+</iter>
+<iter>
+<var name="${i}">40</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.014" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.014" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.014" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.014" endtime="20220301 23:05:21.020"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.013" endtime="20220301 23:05:21.020"/>
+</iter>
+<iter>
+<var name="${i}">41</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.021" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.021" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.021" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.021" endtime="20220301 23:05:21.032"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.020" endtime="20220301 23:05:21.032"/>
+</iter>
+<iter>
+<var name="${i}">42</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.033" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.033" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.033" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.032" endtime="20220301 23:05:21.039"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.032" endtime="20220301 23:05:21.039"/>
+</iter>
+<iter>
+<var name="${i}">43</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.040" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.041" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.041" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.040" endtime="20220301 23:05:21.061"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.039" endtime="20220301 23:05:21.061"/>
+</iter>
+<iter>
+<var name="${i}">44</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.063" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.063" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.063" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.062" endtime="20220301 23:05:21.068"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.062" endtime="20220301 23:05:21.069"/>
+</iter>
+<iter>
+<var name="${i}">45</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.069" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.069" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.070" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.069" endtime="20220301 23:05:21.080"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.069" endtime="20220301 23:05:21.080"/>
+</iter>
+<iter>
+<var name="${i}">46</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.081" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.081" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.081" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.080" endtime="20220301 23:05:21.086"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.080" endtime="20220301 23:05:21.086"/>
+</iter>
+<iter>
+<var name="${i}">47</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.087" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.087" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.087" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.087" endtime="20220301 23:05:21.105"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.087" endtime="20220301 23:05:21.105"/>
+</iter>
+<iter>
+<var name="${i}">48</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.107" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.107" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.107" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.105" endtime="20220301 23:05:21.116"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.105" endtime="20220301 23:05:21.116"/>
+</iter>
+<iter>
+<var name="${i}">49</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:21.117" level="INFO">Sending key(s) ('ARROW_RIGHT',) to page.</msg>
+<msg timestamp="20220301 23:05:21.117" level="INFO">Pressing special key ARROW_RIGHT to browser.</msg>
+<msg timestamp="20220301 23:05:21.117" level="INFO">Releasing special key ARROW_RIGHT.</msg>
+<status status="PASS" starttime="20220301 23:05:21.117" endtime="20220301 23:05:21.123"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:21.116" endtime="20220301 23:05:21.124"/>
+</iter>
+<status status="PASS" starttime="20220301 23:05:20.505" endtime="20220301 23:05:21.124"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${taxCode}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:21.125" level="INFO">Clicking element '(//div[@col-id="taxCode"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:05:21.124" endtime="20220301 23:05:21.230"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dropdown_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:21.231" level="INFO">Clicking element 'xpath://*[name()='path' and contains(@d,'M4.516 7.5')]/..'.</msg>
+<status status="PASS" starttime="20220301 23:05:21.230" endtime="20220301 23:05:21.394"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${taxCode_Opt}</var>
+<arg>${1032}</arg>
+<arg>${445}</arg>
+<arg>${183}</arg>
+<arg>${21}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220301 23:05:21.398" level="INFO">${taxCode_Opt} = [1032, 445, 183, 21]</msg>
+<status status="PASS" starttime="20220301 23:05:21.394" endtime="20220301 23:05:21.398"/>
+</kw>
+<kw name="Click On Region" library="SikuliLibrary">
+<arg>${taxCode_Opt}</arg>
+<doc>Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<msg timestamp="20220301 23:05:21.969" level="INFO">[log] CLICK on L[1123,455]@S(0) (565 msec)</msg>
+<status status="PASS" starttime="20220301 23:05:21.399" endtime="20220301 23:05:21.970"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currency}</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:21.971" level="INFO">Clicking '(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:05:21.970" endtime="20220301 23:05:22.339"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currency}</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:22.340" level="INFO">Clicking '(//div[@class="ag-center-cols-clipper"])[1]/div/div/div/div[@col-id="sourceCurrency"]' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:05:22.339" endtime="20220301 23:05:22.705"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currency_opt}</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:22.706" level="INFO">Clicking '//div[@class=" css-g1d714-ValueContainer"]' using an action chain.</msg>
+<status status="PASS" starttime="20220301 23:05:22.705" endtime="20220301 23:05:23.050"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${curr_Opt}</var>
+<arg>${438}</arg>
+<arg>${449}</arg>
+<arg>${168}</arg>
+<arg>${26}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220301 23:05:23.055" level="INFO">${curr_Opt} = [438, 449, 168, 26]</msg>
+<status status="PASS" starttime="20220301 23:05:23.051" endtime="20220301 23:05:23.055"/>
+</kw>
+<kw name="Click On Region" library="SikuliLibrary">
+<arg>${curr_Opt}</arg>
+<doc>Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<msg timestamp="20220301 23:05:23.624" level="INFO">[log] CLICK on L[522,462]@S(0) (561 msec)</msg>
+<status status="PASS" starttime="20220301 23:05:23.056" endtime="20220301 23:05:23.624"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${add_item_white_space}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:23.626" level="INFO">Double clicking element 'xpath:(//div[@class="ag-center-cols-viewport"])[1]'.</msg>
+<status status="PASS" starttime="20220301 23:05:23.625" endtime="20220301 23:05:23.975"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>20</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:23.976" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:23.976" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:23.976" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:23.975" endtime="20220301 23:05:24.016"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:23.975" endtime="20220301 23:05:24.016"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.016" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.017" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.017" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.016" endtime="20220301 23:05:24.027"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.016" endtime="20220301 23:05:24.027"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.028" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.029" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.029" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.028" endtime="20220301 23:05:24.038"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.028" endtime="20220301 23:05:24.038"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.039" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.040" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.040" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.038" endtime="20220301 23:05:24.050"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.038" endtime="20220301 23:05:24.050"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.051" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.051" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.051" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.050" endtime="20220301 23:05:24.062"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.050" endtime="20220301 23:05:24.062"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.063" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.063" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.064" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.063" endtime="20220301 23:05:24.072"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.062" endtime="20220301 23:05:24.072"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.073" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.073" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.073" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.072" endtime="20220301 23:05:24.083"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.072" endtime="20220301 23:05:24.083"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.084" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.084" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.084" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.083" endtime="20220301 23:05:24.094"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.083" endtime="20220301 23:05:24.094"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.096" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.096" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.096" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.095" endtime="20220301 23:05:24.103"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.095" endtime="20220301 23:05:24.103"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.104" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.104" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.104" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.103" endtime="20220301 23:05:24.116"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.103" endtime="20220301 23:05:24.116"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.117" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.117" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.117" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.117" endtime="20220301 23:05:24.128"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.117" endtime="20220301 23:05:24.128"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.129" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.129" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.129" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.128" endtime="20220301 23:05:24.136"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.128" endtime="20220301 23:05:24.136"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.137" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.137" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.137" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.136" endtime="20220301 23:05:24.152"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.136" endtime="20220301 23:05:24.152"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.154" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.154" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.154" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.152" endtime="20220301 23:05:24.164"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.152" endtime="20220301 23:05:24.164"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.165" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.165" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.165" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.165" endtime="20220301 23:05:24.176"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.164" endtime="20220301 23:05:24.177"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.178" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.178" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.178" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.177" endtime="20220301 23:05:24.185"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.177" endtime="20220301 23:05:24.185"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.186" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.186" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.186" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.186" endtime="20220301 23:05:24.202"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.185" endtime="20220301 23:05:24.202"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.203" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.203" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.203" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.202" endtime="20220301 23:05:24.218"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.202" endtime="20220301 23:05:24.218"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.219" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.219" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.219" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.218" endtime="20220301 23:05:24.230"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.218" endtime="20220301 23:05:24.230"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.230" level="INFO">Sending key(s) ('ARROW_LEFT',) to page.</msg>
+<msg timestamp="20220301 23:05:24.231" level="INFO">Pressing special key ARROW_LEFT to browser.</msg>
+<msg timestamp="20220301 23:05:24.231" level="INFO">Releasing special key ARROW_LEFT.</msg>
+<status status="PASS" starttime="20220301 23:05:24.230" endtime="20220301 23:05:24.238"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:24.230" endtime="20220301 23:05:24.238"/>
+</iter>
+<status status="PASS" starttime="20220301 23:05:23.975" endtime="20220301 23:05:24.238"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${supplier_uid}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:24.239" level="INFO">Clicking element 'xpath:(//div[@col-id="supplierUuid"])[2]'.</msg>
+<status status="PASS" starttime="20220301 23:05:24.238" endtime="20220301 23:05:24.365"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${supply_code}</var>
+<arg>${638}</arg>
+<arg>${405}</arg>
+<arg>${139}</arg>
+<arg>${33}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220301 23:05:24.368" level="INFO">${supply_code} = [638, 405, 139, 33]</msg>
+<status status="PASS" starttime="20220301 23:05:24.365" endtime="20220301 23:05:24.368"/>
+</kw>
+<kw name="Click On Region" library="SikuliLibrary">
+<arg>${supply_code}</arg>
+<doc>Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<msg timestamp="20220301 23:05:24.932" level="INFO">[log] CLICK on L[707,421]@S(0) (556 msec)</msg>
+<status status="PASS" starttime="20220301 23:05:24.369" endtime="20220301 23:05:24.932"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.933" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg timestamp="20220301 23:05:24.934" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg timestamp="20220301 23:05:24.934" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20220301 23:05:24.933" endtime="20220301 23:05:24.943"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220301 23:05:24.943" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg timestamp="20220301 23:05:24.944" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg timestamp="20220301 23:05:24.944" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220301 23:05:24.943" endtime="20220301 23:05:24.965"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submit_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220301 23:05:24.966" level="INFO">Clicking button 'xpath://button[text()='Submit']'.</msg>
+<status status="PASS" starttime="20220301 23:05:24.965" endtime="20220301 23:05:25.238"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20220301 23:05:25.239" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20220301 23:05:25.238" endtime="20220301 23:05:26.896"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220301 23:05:31.905" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220301 23:05:26.896" endtime="20220301 23:05:31.905"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:12.266" endtime="20220301 23:05:31.905"/>
+</kw>
+<status status="PASS" starttime="20220301 23:05:00.929" endtime="20220301 23:05:31.906"/>
+</test>
+<status status="PASS" starttime="20220301 23:04:03.209" endtime="20220301 23:05:31.908"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Raise PPR">Raise PPR</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Raise PPR">Raise PPR</stat>
 </suite>
 </statistics>
 <errors>
