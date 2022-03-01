@@ -12,62 +12,82 @@ ${url}      https://auth-stag.doxa-holdings.com/login
 ${browser}   gc
 
 *** Test Cases ***
-Raise PPR
-    Enter Marilyn username
-    Click Login Button
-    Wait Until Page Contains    Dashboard   10
+#Raise PPR
+#    Enter Marilyn username
+#    Click Login Button
+#    Wait Until Page Contains    Dashboard   10
+#
+#    Click Requisition Tab
+#    Click Pre Purchase Requisition Tab
+#    Click Raise Pre-Requisition Tab
+#
+#    Select Type of Requisition
+#    Select Nature of Requisition
+#    Select Currency
+#    Enter PPR Title
+#    Select Procuement Type
+#    Select Approval Route
+#    Enter Delivery Date
+#    Enter Delivery Note
+#    Enter Delivery Address
+#    Click Add Manual Button
+#    Enter Manual Fields
+#    Validate Internal Conversations
+#    Validate External Conversations
+#    Click PPR Raise Submit Button
+#    Verify PPR
+#    Sleep   5
+#    Click Logout
+#
+#
+#Approve PPR
+#    Enter Chris username
+#    Click Login Button
+#    Wait Until Page Contains    Dashboard   10
+#
+#    Click Requisition Tab
+#    Click Pre Purchase Requisition Tab
+#    Click Purchase Pre-Requisitions List
+#    Select first List
+#    Scroll down to Audit Trail
+#    Click Approve Button
+#    Sleep   5
+#    Click Logout
+#
+#Convert to PR
+#    Enter Marilyn username
+#    Click Login Button
+#    Wait Until Page Contains    Dashboard   10
+#
+#    Click Requisition Tab
+#    Click Pre Purchase Requisition Tab
+#    Click Purchase Pre-Requisitions List
+#    Select first List
+#    Scroll down to Audit Trail
+#    Click Convert to Request
+#    Sleep   5
+#    Select first List
+#    Submit Purchase Request Details
+#    Click Logout
 
-    Click Requisition Tab
-    Click Pre Purchase Requisition Tab
-    Click Raise Pre-Requisition Tab
-
-    Select Type of Requisition
-    Select Nature of Requisition
-    Select Currency
-    Enter PPR Title
-    Select Procuement Type
-    Select Approval Route
-    Enter Delivery Date
-    Enter Delivery Note
-    Enter Delivery Address
-    Click Add Manual Button
-    Enter Manual Fields
-    Validate Internal Conversations
-    Validate External Conversations
-    Click PPR Raise Submit Button
-    Verify PPR
-    Sleep   5
-    Click Logout
-
-
-Approve PPR
+Approve PR
     Enter Chris username
     Click Login Button
     Wait Until Page Contains    Dashboard   10
+#
+#    Click Requisition Tab
+#    Go to PR list
+#    Select first List
+#    Approve Purchase Request
 
-    Click Requisition Tab
-    Click Pre Purchase Requisition Tab
-    Click Purchase Pre-Requisitions List
+Conversion To PO
+    Go to Purchase Requisitions To Be Converted List
     Select first List
-    Scroll down to Audit Trail
-    Click Approve Button
+    Click Convert to PO
     Sleep   5
-    Click Logout
 
-Convert to PR
-    Enter Marilyn username
-    Click Login Button
-    Wait Until Page Contains    Dashboard   10
+Purchase Order Details issue
 
-    Click Requisition Tab
-    Click Pre Purchase Requisition Tab
-    Click Purchase Pre-Requisitions List
-    Select first List
-    Scroll down to Audit Trail
-    Click Convert to Request
-    Sleep   5
-    Select first List
-    Submit Purchase Request Details
 
 *** Keywords ***
 Login Setup
@@ -378,3 +398,43 @@ Submit Purchase Request Details
     Click Button     ${submit_button}
     Handle Alert
     Sleep   5
+
+Go to PR list
+    ${Requisition_left_tab} =  fetchExcel.Fetch Login Excel    Locators    ${54}   ${2}
+    ${PR_list_left_tab} =      fetchExcel.Fetch Login Excel    Locators    ${55}   ${2}
+
+    Click Element   ${Requisition_left_tab}
+    Click Element   ${PR_list_left_tab}
+
+Approve Purchase Request
+    ${approve_button} =   fetchExcel.Fetch Login Excel    Locators    ${56}   ${2}
+
+    Wait Until Element Is Visible       ${approve_button}       10
+    Wait Until Element Is Enabled       ${approve_button}       10
+    Click Button        ${approve_button}
+
+Go to Purchase Requisitions To Be Converted List
+    ${order_tab} =      fetchExcel.Fetch Login Excel    Locators    ${57}   ${2}
+    ${Requests_Pending_Conversion} =      fetchExcel.Fetch Login Excel    Locators    ${58}   ${2}
+    ${PR_to_be_Converted} =      fetchExcel.Fetch Login Excel    Locators    ${59}   ${2}
+
+    Click Element       ${order_tab}
+    Click Element       ${Requests_Pending_Conversion}
+    Click Element       ${PR_to_be_Converted}
+
+Click Convert to PO
+    ${convert_to_PO_button} =   fetchExcel.Fetch Login Excel    Locators    ${60}   ${2}
+    ${add_item_white_space} =   fetchExcel.Fetch Login Excel    Locators    ${25}   ${2}
+
+    Scroll Element Into View         ${add_item_white_space}
+    Double Click Element        ${add_item_white_space}
+    Wait Until Element Is Visible   ${convert_to_PO_button}     10
+    Element Should Be Visible       ${convert_to_PO_button}
+    Click Button        ${convert_to_PO_button}
+
+Click View Button
+    ${view_button}  = fetchExcel.Fetch Login Excel    Locators    ${61}   ${2}
+
+    Wait Until Element Is Visible   ${view_button}     10
+    Element Should Be Visible       ${view_button}
+    Click Button        ${view_button}
