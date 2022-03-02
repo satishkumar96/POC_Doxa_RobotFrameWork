@@ -5,7 +5,7 @@ Library  String
 Library     SikuliLibrary
 
 Suite Setup     Login Setup
-#Suite Teardown      Login Teardown
+Suite Teardown      Login Teardown
 
 *** Variables ***
 ${url}      https://auth-stag.doxa-holdings.com/login
