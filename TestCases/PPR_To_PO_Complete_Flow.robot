@@ -36,7 +36,7 @@ Raise PPR
     Validate External Conversations
     Click PPR Raise Submit Button
     Verify PPR
-    Sleep   5
+    Sleep   8
     Click Logout
 
 
@@ -51,7 +51,7 @@ Approve PPR
     Select first List
     Scroll down to Audit Trail
     Click Approve Button
-    Sleep   5
+    Sleep   8
     Click Logout
 
 Convert to PR
@@ -65,7 +65,7 @@ Convert to PR
     Select first List
     Scroll down to Audit Trail
     Click Convert to Request
-    Sleep   5
+    Sleep   8
     Select first List
     Submit Purchase Request Details
     Click Logout
@@ -79,19 +79,19 @@ Approve PR
     Go to PR list
     Select first List
     Approve Purchase Request
-    Sleep   5
+    Sleep   8
 
 Conversion To PO
     Go to Purchase Requisitions To Be Converted List
     Select first List
     Click Convert to PO
-    Sleep   5
+    Sleep   8
 
 Purchase Order Details issue
     Select first Purchase Orders List
     Select first List
     Issue Purchase Order Details
-    Sleep   5
+    Sleep   8
 
 
 *** Keywords ***
@@ -100,6 +100,7 @@ Login Setup
     Maximize Browser Window
     Set Browser Implicit Wait   30
     Set Selenium Implicit Wait  30
+    Delete All Cookies
 
 Login Teardown
     Close Browser
