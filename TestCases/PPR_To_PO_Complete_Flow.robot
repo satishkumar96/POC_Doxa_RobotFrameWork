@@ -17,81 +17,81 @@ Raise PPR
     Click Login Button
     Wait Until Page Contains    Dashboard   10
 
-#    Click Requisition Tab
-#    Click Pre Purchase Requisition Tab
-#    Click Raise Pre-Requisition Tab
-#
-#    Select Type of Requisition
-#    Select Nature of Requisition
-#    Select Currency
-#    Enter PPR Title
-#    Select Procuement Type
-#    Select Approval Route
-#    Enter Delivery Date
-#    Enter Delivery Note
-#    Enter Delivery Address
-#    Click Add Manual Button
-#    Enter Manual Fields
-#    Validate Internal Conversations
-#    Validate External Conversations
-#    Click PPR Raise Submit Button
-#    Verify PPR
+    Click Requisition Tab
+    Click Pre Purchase Requisition Tab
+    Click Raise Pre-Requisition Tab
+
+    Select Type of Requisition
+    Select Nature of Requisition
+    Select Currency
+    Enter PPR Title
+    Select Procuement Type
+    Select Approval Route
+    Enter Delivery Date
+    Enter Delivery Note
+    Enter Delivery Address
+    Click Add Manual Button
+    Enter Manual Fields
+    Validate Internal Conversations
+    Validate External Conversations
+    Click PPR Raise Submit Button
+    Verify PPR
     Sleep   8
     Click Logout
 
 
-#Approve PPR
-#    Enter Chris username
-#    Click Login Button
-#    Wait Until Page Contains    Dashboard   10
-#
-#    Click Requisition Tab
-#    Click Pre Purchase Requisition Tab
-#    Click Purchase Pre-Requisitions List
-#    Select first List
-#    Scroll down to Audit Trail
-#    Click Approve Button
-#    Sleep   8
-#    Click Logout
-#
-#Convert to PR
-#    Enter Marilyn username
-#    Click Login Button
-#    Wait Until Page Contains    Dashboard   10
-#
-#    Click Requisition Tab
-#    Click Pre Purchase Requisition Tab
-#    Click Purchase Pre-Requisitions List
-#    Select first List
-#    Scroll down to Audit Trail
-#    Click Convert to Request
-#    Sleep   8
-#    Select first List
-#    Submit Purchase Request Details
-#    Click Logout
-#
-#Approve PR
-#    Enter Chris username
-#    Click Login Button
-#    Wait Until Page Contains    Dashboard   10
-#
-#    Click Requisition Tab
-#    Go to PR list
-#    Select first List
-#    Approve Purchase Request
-#    Sleep   8
-#
-#Conversion To PO
-#    Go to Purchase Requisitions To Be Converted List
-#    Select first List
-#    Click Convert to PO
-#    Sleep   8
-#
-#Purchase Order Details issue
-#    Select first Purchase Orders List
-#    Select first List
-#    Issue Purchase Order Details
-#    Sleep   8
+Approve PPR
+    Enter Chris username
+    Click Login Button
+    Wait Until Page Contains    Dashboard   10
+
+    Click Requisition Tab
+    Click Pre Purchase Requisition Tab
+    Click Purchase Pre-Requisitions List
+    Select first List
+    Scroll down to Audit Trail
+    Click Approve Button
+    Sleep   8
+    Click Logout
+
+Convert to PR
+    Enter Marilyn username
+    Click Login Button
+    Wait Until Page Contains    Dashboard   10
+
+    Click Requisition Tab
+    Click Pre Purchase Requisition Tab
+    Click Purchase Pre-Requisitions List
+    Select first List
+    Scroll down to Audit Trail
+    Click Convert to Request
+    Sleep   8
+    Select first List
+    Submit Purchase Request Details
+    Click Logout
+
+Approve PR
+    Enter Chris username
+    Click Login Button
+    Wait Until Page Contains    Dashboard   10
+
+    Click Requisition Tab
+    Go to PR list
+    Select first List
+    Approve Purchase Request
+    Sleep   8
+
+Conversion To PO
+    Go to Purchase Requisitions To Be Converted List
+    Select first List
+    Click Convert to PO
+    Sleep   8
+
+Purchase Order Details issue
+    Select first Purchase Orders List
+    Select first List
+    Issue Purchase Order Details
+    Sleep   8
 
 
 *** Keywords ***
