@@ -23,7 +23,7 @@ Raise PR
     Select Type of Requisition
     Select Nature of Requisition
     Select Currency
-    Enter PPR Title
+    Enter PR Title
     Select Procuement Type
     Select Approval Route
     Enter Delivery Date
@@ -44,19 +44,19 @@ Approve PR
 
     Click Requisition Tab
     Go to PR list
-    Select first List
+    Select first List by PR Title
     Approve Purchase Request
     Sleep   8
 
 Conversion To PO
     Go to Purchase Requisitions To Be Converted List
-    Select first List
+    Select first List by PR Title
     Click Convert to PO
     Sleep   8
 
 Purchase Order Details issue
     Select first Purchase Orders List
-    Select first List
+    Select first List by PR Number
     Issue Purchase Order Details
     Sleep   8
 
@@ -133,11 +133,14 @@ Select Currency
     Click Element   ${curr}
     Select From List By Label   ${curr}        ${select_curr}
 
-Enter PPR Title
+Enter PR Title
     ${pr_title} =  fetchExcel.Fetch Login Excel     Locators       ${66}    ${2}
     ${pr_text} =   Generate Random String      8       [LOWER][NUMBERS][UPPER]
 
     SeleniumLibrary.Input Text      ${pr_title}    Test${pr_text}   True
+    Sleep   2
+    ${getPRTitle} =   SeleniumLibrary.Get Text    ${pr_title}
+    fetchExcel.Put Title        ${getPRTitle}
 
 Select Procuement Type
     ${procurement} =    fetchExcel.Fetch Login Excel     Locators       ${13}    ${2}
@@ -362,7 +365,20 @@ Issue Purchase Order Details
 
     Click Button    ${issue_button}
 
-Select first List
-    ${Pre_Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
+Select first List by PR Title
+    ${Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
 
-    Double Click Element        ${Pre_Requisitions_first_List}
+    ${getTitle} =    fetchExcel.Get Title
+    SeleniumLibrary.Input Text      xpath://input[@aria-label="Purchase Request Title Filter Input"]        ${getTitle}
+    Sleep   2
+    ${getPR_Number} =    SeleniumLibrary.Get Text    xpath:(//div[@col-id="prNumber"])[2]
+    fetchExcel.Put Pr Number    ${getPR_Number}
+    Double Click Element        ${Requisitions_first_List}
+
+Select first List by PR Number
+    ${Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
+
+    ${get_pr_number} =  fetchExcel.Get Pr Number
+    SeleniumLibrary.Input Text      xpath://input[@aria-label="Purchase Requisition No. Filter Input"]        ${get_pr_number}
+    Sleep   2
+    Double Click Element        ${Requisitions_first_List}
