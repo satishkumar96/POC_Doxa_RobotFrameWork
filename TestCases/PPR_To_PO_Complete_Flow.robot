@@ -48,7 +48,7 @@ Approve PPR
     Click Requisition Tab
     Click Pre Purchase Requisition Tab
     Click Purchase Pre-Requisitions List
-    Select first List
+    Select first List by PPR Title
     Scroll down to Audit Trail
     Click Approve Button
     Sleep   8
@@ -62,11 +62,11 @@ Convert to PR
     Click Requisition Tab
     Click Pre Purchase Requisition Tab
     Click Purchase Pre-Requisitions List
-    Select first List
+    Select first List by PPR Title
     Scroll down to Audit Trail
     Click Convert to Request
     Sleep   8
-    Select first List
+    Select first List by PR Title
     Submit Purchase Request Details
     Click Logout
 
@@ -77,19 +77,19 @@ Approve PR
 
     Click Requisition Tab
     Go to PR list
-    Select first List
+    Select first List by PR Title
     Approve Purchase Request
     Sleep   8
 
 Conversion To PO
     Go to Purchase Requisitions To Be Converted List
-    Select first List
+    Select first List by PR Title
     Click Convert to PO
     Sleep   8
 
 Purchase Order Details issue
     Select first Purchase Orders List
-    Select first List
+    Select first List by PR Number
     Issue Purchase Order Details
     Sleep   8
 
@@ -174,6 +174,11 @@ Enter PPR Title
     ${ppr_text} =   Generate Random String      8       [LOWER][NUMBERS][UPPER]
 
     SeleniumLibrary.Input Text      ${ppr_title}    Test${ppr_text}   True
+
+    Sleep   2
+
+    ${getPPRTitle} =   SeleniumLibrary.Get Text    ${ppr_title}
+    fetchExcel.Put Title        ${getPPRTitle}
 
 Select Procuement Type
     ${procurement} =    fetchExcel.Fetch Login Excel     Locators       ${13}    ${2}
@@ -318,10 +323,31 @@ Click Purchase Pre-Requisitions List
 
     Click Element   ${Purchase_Pre_Requisitions_List}
 
-Select first List
+Select first List by PPR Title
     ${Pre_Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
 
+    ${getTitle} =    fetchExcel.Get Title
+    SeleniumLibrary.Input Text      xpath://input[@aria-label="Purchase Pre-requisition Title Filter Input"]        ${getTitle}
+    Sleep   2
     Double Click Element        ${Pre_Requisitions_first_List}
+
+Select first List by PR Title
+    ${Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
+
+    ${getTitle} =    fetchExcel.Get Title
+    SeleniumLibrary.Input Text      xpath://input[@aria-label="Purchase Request Title Filter Input"]        ${getTitle}
+    Sleep   2
+    ${getPR_Number} =    SeleniumLibrary.Get Text    xpath:(//div[@col-id="prNumber"])[2]
+    fetchExcel.Put Pr Number    ${getPR_Number}
+    Double Click Element        ${Requisitions_first_List}
+
+Select first List by PR Number
+    ${Requisitions_first_List} =    fetchExcel.Fetch Login Excel    Locators    ${39}   ${2}
+
+    ${get_pr_number} =  fetchExcel.Get Pr Number
+    SeleniumLibrary.Input Text      xpath://input[@aria-label="Purchase Requisition No. Filter Input"]        ${get_pr_number}
+    Sleep   2
+    Double Click Element        ${Requisitions_first_List}
 
 Scroll down to Audit Trail
     ${Audit_trail} =    fetchExcel.Fetch Login Excel    Locators    ${40}   ${2}
